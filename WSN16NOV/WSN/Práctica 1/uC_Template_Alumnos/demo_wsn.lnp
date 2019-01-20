@@ -1,0 +1,4 @@
+"START_AD.obj",
+"Template_demo.obj" 
+TO "demo_wsn" 
+RAMSIZE(256) 

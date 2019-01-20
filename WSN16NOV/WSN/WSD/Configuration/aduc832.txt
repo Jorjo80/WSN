@@ -1,0 +1,14 @@
+CodeSize = 63488                 	'size of code memory
+DataSize = 1024                 	'size of the data memory (pages)
+QuickDownloadOption = True		'Allow Quick Download Protocol
+FastBaudrateOption = True		'Allow change to Fast Baudrate
+SecurityBitsOption = True		'Allow Download to Security Bits
+BootloadOption = True	          	'Allow Bootload Mode
+VerifyAfterDownloadOption = True	'Allow Verify Code Command
+T3CON = 130				'baudrate config for 115200 (if allowed)
+T3FD = 009				'baudrate config for 115200 (if allowed)
+T3CON9600 = 133				'baudrate config for 9600
+T3FD9600 = 045				'baudrate config for 9600
+XTAL = 1				'default = 32.768kHz crystal
+fcore = 16777216			'default
+ClkAdjust = 1                           'For checking of max. kernel bauds

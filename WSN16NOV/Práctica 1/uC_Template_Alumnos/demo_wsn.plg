@@ -1,0 +1,109 @@
+<html>
+<body>
+<pre>
+<h1>µVision3 Build Log</h1>
+<h2>Project:</h2>
+C:\Users\Pract\Desktop\Práctica 1\uC_Template_Alumnos\demo_wsn.uv2
+Project File Date:  12/04/2013
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(196): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(298): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(416): error C202: 'val1': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(196): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(298): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(416): error C202: 'val1': undefined identifier
+Target not created
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(196): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(298): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_SENSORS_READING?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+Program Size: data=64.1 xdata=0 code=1120
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(196): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(298): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_SENSORS_READING?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+Program Size: data=64.1 xdata=0 code=1114
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(196): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(298): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_SENSORS_READING?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+Program Size: data=64.1 xdata=0 code=1096
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(196): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(298): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_SENSORS_READING?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+Program Size: data=64.1 xdata=0 code=1090
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(196): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(298): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_SENSORS_READING?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+Program Size: data=64.1 xdata=0 code=1114
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(196): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(298): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_SENSORS_READING?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+Program Size: data=64.1 xdata=0 code=1124
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 5 Warning(s).
