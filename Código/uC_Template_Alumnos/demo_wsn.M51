@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.05                                                        01/20/2019  08:31:30  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.05                                                        01/20/2019  20:39:12  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.05, INVOKED BY:
@@ -59,27 +59,27 @@ LINK MAP OF MODULE:  demo_wsn (?C_STARTUP)
             CODE    120AH     00A6H     UNIT         ?PR?MAQUINAESTADOS?TEMPLATE_DEMO
             CODE    12B0H     00A3H     UNIT         ?PR?COMUNICACIONES?TEMPLATE_DEMO
             CODE    1353H     0095H     UNIT         ?CO?TEMPLATE_DEMO
-BL51 BANKED LINKER/LOCATER V6.05                                                      01/20/2019  08:31:30  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.05                                                      01/20/2019  20:39:12  PAGE 2
 
 
             CODE    13E8H     008FH     UNIT         ?C_C51STARTUP
-            CODE    1477H     0063H     UNIT         ?PR?MAIN?TEMPLATE_DEMO
-            CODE    14DAH     005EH     UNIT         ?PR?_WSN_SENSORS_READING?TEMPLATE_DEMO
-            CODE    1538H     0034H     UNIT         ?PR?IMPRIMIRESTADO?TEMPLATE_DEMO
-            CODE    156CH     0028H     UNIT         ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
-            CODE    1594H     0027H     UNIT         ?PR?PUTCHAR?PUTCHAR
-            CODE    15BBH     0025H     UNIT         ?PR?_WSN_FPGA?TEMPLATE_DEMO
-            CODE    15E0H     0020H     UNIT         ?PR?__WSN_WAIT_ANSWER?TEMPLATE_DEMO
-            CODE    1600H     001AH     UNIT         ?PR?_WSN_INTERRUPT_TIMEINTERVAL?TEMPLATE_DEMO
-            CODE    161AH     0017H     UNIT         ?PR?_WSN_UART841_CONFIG?TEMPLATE_DEMO
-            CODE    1631H     0017H     UNIT         ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
-            CODE    1648H     0012H     UNIT         ?PR?__WS_TIMER_CONFIG?TEMPLATE_DEMO
-            CODE    165AH     000AH     UNIT         ?PR?_GETKEY?_GETKEY
-            CODE    1664H     0009H     UNIT         ?PR?_WSN_INI_FPGA?TEMPLATE_DEMO
-            CODE    166DH     0009H     UNIT         ?C_INITSEG
-            CODE    1676H     0007H     UNIT         ?PR?_WS_ADC_CONFIG?TEMPLATE_DEMO
-            CODE    167DH     0003H     UNIT         ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
-            CODE    1680H     0001H     UNIT         ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+            CODE    1477H     005EH     UNIT         ?PR?_WSN_SENSORS_READING?TEMPLATE_DEMO
+            CODE    14D5H     0034H     UNIT         ?PR?IMPRIMIRESTADO?TEMPLATE_DEMO
+            CODE    1509H     0028H     UNIT         ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+            CODE    1531H     0027H     UNIT         ?PR?PUTCHAR?PUTCHAR
+            CODE    1558H     0025H     UNIT         ?PR?_WSN_FPGA?TEMPLATE_DEMO
+            CODE    157DH     0020H     UNIT         ?PR?__WSN_WAIT_ANSWER?TEMPLATE_DEMO
+            CODE    159DH     001AH     UNIT         ?PR?_WSN_INTERRUPT_TIMEINTERVAL?TEMPLATE_DEMO
+            CODE    15B7H     001AH     UNIT         ?PR?MAIN?TEMPLATE_DEMO
+            CODE    15D1H     0017H     UNIT         ?PR?_WSN_UART841_CONFIG?TEMPLATE_DEMO
+            CODE    15E8H     0017H     UNIT         ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+            CODE    15FFH     0012H     UNIT         ?PR?__WS_TIMER_CONFIG?TEMPLATE_DEMO
+            CODE    1611H     000AH     UNIT         ?PR?_GETKEY?_GETKEY
+            CODE    161BH     0009H     UNIT         ?PR?_WSN_INI_FPGA?TEMPLATE_DEMO
+            CODE    1624H     0009H     UNIT         ?C_INITSEG
+            CODE    162DH     0007H     UNIT         ?PR?_WS_ADC_CONFIG?TEMPLATE_DEMO
+            CODE    1634H     0003H     UNIT         ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
+            CODE    1637H     0001H     UNIT         ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
 
 
 
@@ -99,14 +99,19 @@ SEGMENT                                             BIT_GROUP          DATA_GROU
   +--> ?PR?_WSN_UART841_CONFIG?TEMPLATE_DEMO
   +--> ?CO?TEMPLATE_DEMO
   +--> ?PR?PRINTF?PRINTF
-  +--> ?PR?__WS_TIMER_CONFIG?TEMPLATE_DEMO
-  +--> ?PR?_WSN_SENSORS_READING?TEMPLATE_DEMO
-  +--> ?PR?MAQUINAESTADOS?TEMPLATE_DEMO
-  +--> ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
-  +--> ?PR?IMPRIMIRESTADO?TEMPLATE_DEMO
+  +--> ?PR?COMUNICACIONES?TEMPLATE_DEMO
 
 ?PR?PRINTF?PRINTF                                0020H.0  0001H.1    0022H    001CH
   +--> ?PR?PUTCHAR?PUTCHAR
+
+?PR?COMUNICACIONES?TEMPLATE_DEMO                 -----    -----      -----    -----
+  +--> ?PR?__WS_TIMER_CONFIG?TEMPLATE_DEMO
+  +--> ?PR?_WSN_SENSORS_READING?TEMPLATE_DEMO
+  +--> ?PR?MAQUINAESTADOS?TEMPLATE_DEMO
+  +--> ?CO?TEMPLATE_DEMO
+  +--> ?PR?PRINTF?PRINTF
+  +--> ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+  +--> ?PR?IMPRIMIRESTADO?TEMPLATE_DEMO
 
 ?PR?_WSN_SENSORS_READING?TEMPLATE_DEMO           -----    -----      0022H    0004H
   +--> ?PR?_WSN_FPGA?TEMPLATE_DEMO
@@ -114,12 +119,12 @@ SEGMENT                                             BIT_GROUP          DATA_GROU
 ?PR?_WSN_FPGA?TEMPLATE_DEMO                      0020H.0  0000H.1    -----    -----
 
 ?PR?IMPRIMIRESTADO?TEMPLATE_DEMO                 -----    -----      -----    -----
+BL51 BANKED LINKER/LOCATER V6.05                                                      01/20/2019  20:39:12  PAGE 3
+
+
   +--> ?CO?TEMPLATE_DEMO
   +--> ?PR?PRINTF?PRINTF
 
-
-
-BL51 BANKED LINKER/LOCATER V6.05                                                      01/20/2019  08:31:30  PAGE 3
 
 
 SYMBOL TABLE OF MODULE:  demo_wsn (?C_STARTUP)
@@ -169,31 +174,31 @@ SYMBOL TABLE OF MODULE:  demo_wsn (?C_STARTUP)
   C:0000H         SYMBOL        _ICE_DUMMY_
   B:0080H.3       PUBLIC        SelTrigger
   D:0080H         PUBLIC        P0
-  C:156CH         PUBLIC        _WSN_message_detect
+  C:1509H         PUBLIC        _WSN_message_detect
   D:00A0H         PUBLIC        P2
   D:0008H         PUBLIC        estado
   B:00A8H.7       PUBLIC        EA
-  C:14DAH         PUBLIC        _WSN_sensors_reading
+  C:1477H         PUBLIC        _WSN_sensors_reading
+BL51 BANKED LINKER/LOCATER V6.05                                                      01/20/2019  20:39:12  PAGE 4
+
+
   B:00D8H.4       PUBLIC        SCONV
   D:000AH         PUBLIC        resulti
   B:0080H.6       PUBLIC        Ack1N
   B:0080H.4       PUBLIC        Ack2N
   D:00A1H         PUBLIC        TIMECON
-BL51 BANKED LINKER/LOCATER V6.05                                                      01/20/2019  08:31:30  PAGE 4
-
-
   D:000EH         PUBLIC        Temp
   B:00A8H.4       PUBLIC        ES
   D:0010H         PUBLIC        flag
   B:0098H.1       PUBLIC        TI
   D:0011H         PUBLIC        result
-  C:1477H         PUBLIC        main
+  C:15B7H         PUBLIC        main
   B:0080H.0       PUBLIC        reset_fpga
-  C:1648H         PUBLIC        __WS_Timer_Config
+  C:15FFH         PUBLIC        __WS_Timer_Config
   D:0013H         PUBLIC        Hum
   D:00DAH         PUBLIC        ADCDATAH
   B:0080H.7       PUBLIC        TrigByte1N
-  C:1631H         PUBLIC        _WSN_ADC_conversion
+  C:15E8H         PUBLIC        _WSN_ADC_conversion
   B:0080H.5       PUBLIC        TrigByte2N
   D:00D9H         PUBLIC        ADCDATAL
   D:0087H         PUBLIC        PCON
@@ -206,12 +211,12 @@ SYMBOL TABLE OF MODULE:  demo_wsn (?C_STARTUP)
   D:0016H         PUBLIC        DATA_L
   C:120AH         PUBLIC        maquinaEstados
   B:00A8H.3       PUBLIC        ET1
-  C:167DH         PUBLIC        __WSN_ZigBee_config
+  C:1634H         PUBLIC        __WSN_ZigBee_config
   D:008DH         PUBLIC        TH1
   D:00A6H         PUBLIC        INTVAL
-  C:1680H         PUBLIC        MEST_Comunicaciones
+  C:1637H         PUBLIC        MEST_Comunicaciones
   B:0088H.6       PUBLIC        TR1
-  C:15BBH         PUBLIC        _WSN_FPGA
+  C:1558H         PUBLIC        _WSN_FPGA
   D:00A9H         PUBLIC        IEIP2
   D:00EFH         PUBLIC        ADCCON1
   D:00A3H         PUBLIC        SEC
@@ -219,119 +224,119 @@ SYMBOL TABLE OF MODULE:  demo_wsn (?C_STARTUP)
   D:0017H         PUBLIC        LDR
   D:0019H         PUBLIC        c
   D:00A4H         PUBLIC        MIN
-  C:15E0H         PUBLIC        __WSN_wait_answer
-  C:1600H         PUBLIC        _WSN_interrupt_TimeInterval
-  C:1676H         PUBLIC        _WS_ADC_Config
+  C:157DH         PUBLIC        __WSN_wait_answer
+  C:159DH         PUBLIC        _WSN_interrupt_TimeInterval
+  C:162DH         PUBLIC        _WS_ADC_Config
   D:001AH         PUBLIC        est_com
-  C:161AH         PUBLIC        _WSN_UART841_config
-  C:1538H         PUBLIC        imprimirestado
+  C:15D1H         PUBLIC        _WSN_UART841_config
+  C:14D5H         PUBLIC        imprimirestado
   D:001CH         PUBLIC        datain
-  C:1664H         PUBLIC        _WSN_ini_FPGA
+  C:161BH         PUBLIC        _WSN_ini_FPGA
   -------         PROC          __WS_TIMER_CONFIG
   D:0007H         SYMBOL        value
-  C:1648H         LINE#         28
-  C:1648H         LINE#         29
-  C:1648H         LINE#         30
-  C:164BH         LINE#         31
-  C:164EH         LINE#         32
-  C:1650H         LINE#         33
-  C:1652H         LINE#         34
-  C:1654H         LINE#         35
-  C:1656H         LINE#         36
-  C:1659H         LINE#         37
-BL51 BANKED LINKER/LOCATER V6.05                                                      01/20/2019  08:31:30  PAGE 5
+  C:15FFH         LINE#         28
+  C:15FFH         LINE#         29
+  C:15FFH         LINE#         30
+  C:1602H         LINE#         31
+  C:1605H         LINE#         32
+BL51 BANKED LINKER/LOCATER V6.05                                                      01/20/2019  20:39:12  PAGE 5
 
 
+  C:1607H         LINE#         33
+  C:1609H         LINE#         34
+  C:160BH         LINE#         35
+  C:160DH         LINE#         36
+  C:1610H         LINE#         37
   -------         ENDPROC       __WS_TIMER_CONFIG
   -------         PROC          _WS_ADC_CONFIG
-  C:1676H         LINE#         41
-  C:1676H         LINE#         42
-  C:1676H         LINE#         43
-  C:1679H         LINE#         44
-  C:167CH         LINE#         45
+  C:162DH         LINE#         41
+  C:162DH         LINE#         42
+  C:162DH         LINE#         43
+  C:1630H         LINE#         44
+  C:1633H         LINE#         45
   -------         ENDPROC       _WS_ADC_CONFIG
   -------         PROC          _WSN_UART841_CONFIG
-  C:161AH         LINE#         49
-  C:161AH         LINE#         50
-  C:161AH         LINE#         51
-  C:161DH         LINE#         52
-  C:1620H         LINE#         54
-  C:1623H         LINE#         55
-  C:1626H         LINE#         56
-  C:1628H         LINE#         58
-  C:162AH         LINE#         59
-  C:162CH         LINE#         60
-  C:162EH         LINE#         62
-  C:1630H         LINE#         63
+  C:15D1H         LINE#         49
+  C:15D1H         LINE#         50
+  C:15D1H         LINE#         51
+  C:15D4H         LINE#         52
+  C:15D7H         LINE#         54
+  C:15DAH         LINE#         55
+  C:15DDH         LINE#         56
+  C:15DFH         LINE#         58
+  C:15E1H         LINE#         59
+  C:15E3H         LINE#         60
+  C:15E5H         LINE#         62
+  C:15E7H         LINE#         63
   -------         ENDPROC       _WSN_UART841_CONFIG
   -------         PROC          _WSN_ADC_CONVERSION
   -------         DO            
   D:0006H         SYMBOL        sensorData
   -------         ENDDO         
-  C:1631H         LINE#         67
-  C:1631H         LINE#         68
-  C:1631H         LINE#         72
-  C:1633H         LINE#         73
-  C:1636H         LINE#         75
-  C:1645H         LINE#         77
-  C:1647H         LINE#         79
-  C:1647H         LINE#         81
+  C:15E8H         LINE#         67
+  C:15E8H         LINE#         68
+  C:15E8H         LINE#         72
+  C:15EAH         LINE#         73
+  C:15EDH         LINE#         75
+  C:15FCH         LINE#         77
+  C:15FEH         LINE#         79
+  C:15FEH         LINE#         81
   -------         ENDPROC       _WSN_ADC_CONVERSION
   -------         PROC          _WSN_INI_FPGA
-  C:1664H         LINE#         85
-  C:1664H         LINE#         86
-  C:1664H         LINE#         87
-  C:1666H         LINE#         88
-  C:1668H         LINE#         89
-  C:166AH         LINE#         90
-  C:166CH         LINE#         91
+  C:161BH         LINE#         85
+  C:161BH         LINE#         86
+  C:161BH         LINE#         87
+  C:161DH         LINE#         88
+  C:161FH         LINE#         89
+  C:1621H         LINE#         90
+  C:1623H         LINE#         91
   -------         ENDPROC       _WSN_INI_FPGA
   -------         PROC          _WSN_FPGA
   B:0020H.0       SYMBOL        sensorSelector
   -------         DO            
   D:0006H         SYMBOL        fpga_data
   -------         ENDDO         
-  C:15BBH         LINE#         93
-  C:15BBH         LINE#         94
-  C:15BBH         LINE#         97
-  C:15BFH         LINE#         98
-  C:15C1H         LINE#         99
-  C:15C4H         LINE#         101
-  C:15C7H         LINE#         102
-  C:15C9H         LINE#         104
-BL51 BANKED LINKER/LOCATER V6.05                                                      01/20/2019  08:31:30  PAGE 6
+  C:1558H         LINE#         93
+  C:1558H         LINE#         94
+  C:1558H         LINE#         97
+BL51 BANKED LINKER/LOCATER V6.05                                                      01/20/2019  20:39:12  PAGE 6
 
 
-  C:15CBH         LINE#         105
-  C:15CEH         LINE#         107
-  C:15D1H         LINE#         108
-  C:15D3H         LINE#         111
-  C:15DFH         LINE#         113
-  C:15DFH         LINE#         115
+  C:155CH         LINE#         98
+  C:155EH         LINE#         99
+  C:1561H         LINE#         101
+  C:1564H         LINE#         102
+  C:1566H         LINE#         104
+  C:1568H         LINE#         105
+  C:156BH         LINE#         107
+  C:156EH         LINE#         108
+  C:1570H         LINE#         111
+  C:157CH         LINE#         113
+  C:157CH         LINE#         115
   -------         ENDPROC       _WSN_FPGA
   -------         PROC          _WSN_INTERRUPT_TIMEINTERVAL
-  C:1600H         LINE#         119
-  C:1604H         LINE#         124
-  C:1606H         LINE#         125
-  C:160BH         LINE#         126
-  C:160DH         LINE#         127
-  C:160FH         LINE#         128
-  C:1612H         LINE#         129
-  C:1612H         LINE#         133
-  C:1615H         LINE#         136
+  C:159DH         LINE#         119
+  C:15A1H         LINE#         124
+  C:15A3H         LINE#         125
+  C:15A8H         LINE#         126
+  C:15AAH         LINE#         127
+  C:15ACH         LINE#         128
+  C:15AFH         LINE#         129
+  C:15AFH         LINE#         133
+  C:15B2H         LINE#         136
   -------         ENDPROC       _WSN_INTERRUPT_TIMEINTERVAL
   -------         PROC          _WSN_SENSORS_READING
   -------         DO            
   D:0022H         SYMBOL        result
   D:0006H         SYMBOL        i
   -------         ENDDO         
-  C:14DAH         LINE#         140
-  C:14DAH         LINE#         145
-  C:14E3H         LINE#         146
-  C:14FDH         LINE#         147
-  C:150BH         LINE#         150
-  C:1514H         LINE#         151
-  C:1537H         LINE#         174
+  C:1477H         LINE#         140
+  C:1477H         LINE#         145
+  C:1480H         LINE#         146
+  C:149AH         LINE#         147
+  C:14A8H         LINE#         150
+  C:14B1H         LINE#         151
+  C:14D4H         LINE#         174
   -------         ENDPROC       _WSN_SENSORS_READING
   -------         PROC          __WSN_WAIT_ANSWER
   D:003EH         SYMBOL        ASCII
@@ -340,40 +345,40 @@ SYMBOL TABLE OF MODULE:  demo_wsn (?C_STARTUP)
   D:0007H         SYMBOL        serial_read
   D:0040H         SYMBOL        enable
   -------         ENDDO         
-  C:15E0H         LINE#         183
-  C:15E4H         LINE#         184
-  C:15E4H         LINE#         187
-  C:15E7H         LINE#         190
-  C:15E7H         LINE#         191
-  C:15EAH         LINE#         193
-  C:15EEH         LINE#         194
-  C:15EEH         LINE#         195
-  C:15F1H         LINE#         196
-  C:15F3H         LINE#         197
-  C:15F8H         LINE#         198
-  C:15F8H         LINE#         199
-  C:15FBH         LINE#         200
-  C:15FBH         LINE#         201
-  C:15FFH         LINE#         202
+  C:157DH         LINE#         183
+  C:1581H         LINE#         184
+  C:1581H         LINE#         187
+  C:1584H         LINE#         190
+  C:1584H         LINE#         191
+  C:1587H         LINE#         193
+  C:158BH         LINE#         194
+  C:158BH         LINE#         195
+  C:158EH         LINE#         196
+  C:1590H         LINE#         197
+  C:1595H         LINE#         198
+  C:1595H         LINE#         199
+  C:1598H         LINE#         200
+  C:1598H         LINE#         201
+BL51 BANKED LINKER/LOCATER V6.05                                                      01/20/2019  20:39:12  PAGE 7
+
+
+  C:159CH         LINE#         202
   -------         ENDPROC       __WSN_WAIT_ANSWER
   -------         PROC          __WSN_ZIGBEE_CONFIG
   D:001EH         SYMBOL        type
-  C:167DH         LINE#         204
-BL51 BANKED LINKER/LOCATER V6.05                                                      01/20/2019  08:31:30  PAGE 7
-
-
-  C:167FH         LINE#         205
-  C:167FH         LINE#         208
+  C:1634H         LINE#         204
+  C:1636H         LINE#         205
+  C:1636H         LINE#         208
   -------         ENDPROC       __WSN_ZIGBEE_CONFIG
   -------         PROC          _WSN_MESSAGE_DETECT
-  C:156CH         LINE#         210
-  C:156CH         LINE#         211
-  C:156CH         LINE#         212
-  C:1573H         LINE#         213
-  C:157AH         LINE#         214
-  C:1581H         LINE#         215
-  C:1586H         LINE#         216
-  C:158DH         LINE#         217
+  C:1509H         LINE#         210
+  C:1509H         LINE#         211
+  C:1509H         LINE#         212
+  C:1510H         LINE#         213
+  C:1517H         LINE#         214
+  C:151EH         LINE#         215
+  C:1523H         LINE#         216
+  C:152AH         LINE#         217
   -------         ENDPROC       _WSN_MESSAGE_DETECT
   -------         PROC          MAQUINAESTADOS
   C:120AH         LINE#         220
@@ -393,35 +398,35 @@ SYMBOL TABLE OF MODULE:  demo_wsn (?C_STARTUP)
   C:12AFH         LINE#         235
   -------         ENDPROC       MAQUINAESTADOS
   -------         PROC          IMPRIMIRESTADO
-  C:1538H         LINE#         237
-  C:1538H         LINE#         238
-  C:1538H         LINE#         239
-  C:1540H         LINE#         240
-  C:1540H         LINE#         241
-  C:1549H         LINE#         242
-  C:1549H         LINE#         243
-  C:1551H         LINE#         244
-  C:1551H         LINE#         245
-  C:155AH         LINE#         246
-  C:155AH         LINE#         247
-  C:1562H         LINE#         248
-  C:1562H         LINE#         249
-  C:156BH         LINE#         250
-  C:156BH         LINE#         251
+  C:14D5H         LINE#         237
+  C:14D5H         LINE#         238
+  C:14D5H         LINE#         239
+  C:14DDH         LINE#         240
+  C:14DDH         LINE#         241
+  C:14E6H         LINE#         242
+  C:14E6H         LINE#         243
+  C:14EEH         LINE#         244
+  C:14EEH         LINE#         245
+  C:14F7H         LINE#         246
+  C:14F7H         LINE#         247
+  C:14FFH         LINE#         248
+  C:14FFH         LINE#         249
+  C:1508H         LINE#         250
+  C:1508H         LINE#         251
   -------         ENDPROC       IMPRIMIRESTADO
   -------         PROC          MEST_COMUNICACIONES
-  C:1680H         LINE#         253
-  C:1680H         LINE#         254
-  C:1680H         LINE#         256
+  C:1637H         LINE#         253
+  C:1637H         LINE#         254
+  C:1637H         LINE#         256
   -------         ENDPROC       MEST_COMUNICACIONES
+BL51 BANKED LINKER/LOCATER V6.05                                                      01/20/2019  20:39:12  PAGE 8
+
+
   -------         PROC          COMUNICACIONES
   C:12B0H         LINE#         258
   C:12B0H         LINE#         259
   C:12B0H         LINE#         260
   C:12B8H         LINE#         261
-BL51 BANKED LINKER/LOCATER V6.05                                                      01/20/2019  08:31:30  PAGE 8
-
-
   C:12B8H         LINE#         262
   C:12B8H         LINE#         263
   C:12B8H         LINE#         265
@@ -455,33 +460,17 @@ SYMBOL TABLE OF MODULE:  demo_wsn (?C_STARTUP)
   C:1352H         LINE#         312
   -------         ENDPROC       COMUNICACIONES
   -------         PROC          MAIN
-  C:1477H         LINE#         313
-  C:1477H         LINE#         314
-  C:1477H         LINE#         317
-  C:147AH         LINE#         318
-  C:147DH         LINE#         319
-  C:1480H         LINE#         321
-  C:1483H         LINE#         322
-  C:1485H         LINE#         326
-  C:148EH         LINE#         328
-  C:148EH         LINE#         329
-  C:148EH         LINE#         331
-  C:1493H         LINE#         332
-  C:1498H         LINE#         334
-  C:149BH         LINE#         335
-  C:149EH         LINE#         337
-  C:14ADH         LINE#         338
-  C:14BCH         LINE#         339
-  C:14C3H         LINE#         340
-  C:14D2H         LINE#         342
-  C:14D5H         LINE#         350
-  C:14D8H         LINE#         352
-  C:14D8H         LINE#         354
+  C:15B7H         LINE#         313
+  C:15B7H         LINE#         314
+  C:15B7H         LINE#         317
+  C:15BAH         LINE#         318
+  C:15BDH         LINE#         319
+  C:15C0H         LINE#         321
+  C:15C3H         LINE#         322
+  C:15C5H         LINE#         326
+  C:15CEH         LINE#         327
   -------         ENDPROC       MAIN
   -------         ENDMOD        TEMPLATE_DEMO
-BL51 BANKED LINKER/LOCATER V6.05                                                      01/20/2019  08:31:30  PAGE 9
-
-
 
   -------         MODULE        ?C?FPADD
   C:0807H         PUBLIC        ?C?FPADD
@@ -490,6 +479,9 @@ SYMBOL TABLE OF MODULE:  demo_wsn (?C_STARTUP)
 
   -------         MODULE        ?C?FPMUL
   C:08F8H         PUBLIC        ?C?FPMUL
+BL51 BANKED LINKER/LOCATER V6.05                                                      01/20/2019  20:39:12  PAGE 9
+
+
   -------         ENDMOD        ?C?FPMUL
 
   -------         MODULE        ?C?FPDIV
@@ -539,9 +531,6 @@ SYMBOL TABLE OF MODULE:  demo_wsn (?C_STARTUP)
 
   -------         MODULE        ?C?LNEG
   C:0D57H         PUBLIC        ?C?LNEG
-BL51 BANKED LINKER/LOCATER V6.05                                                      01/20/2019  08:31:30  PAGE 10
-
-
   -------         ENDMOD        ?C?LNEG
 
   -------         MODULE        ?C?PLDIIDATA
@@ -550,14 +539,17 @@ SYMBOL TABLE OF MODULE:  demo_wsn (?C_STARTUP)
 
   -------         MODULE        ?C?CCASE
   C:0D75H         PUBLIC        ?C?CCASE
+BL51 BANKED LINKER/LOCATER V6.05                                                      01/20/2019  20:39:12  PAGE 10
+
+
   -------         ENDMOD        ?C?CCASE
 
   -------         MODULE        PUTCHAR
-  C:1594H         PUBLIC        _PUTCHAR
+  C:1531H         PUBLIC        _PUTCHAR
   -------         ENDMOD        PUTCHAR
 
   -------         MODULE        _GETKEY
-  C:165AH         PUBLIC        _GETKEY
+  C:1611H         PUBLIC        _GETKEY
   -------         ENDMOD        _GETKEY
 
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
@@ -569,12 +561,9 @@ SYMBOL TABLE OF MODULE:  demo_wsn (?C_STARTUP)
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
 
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?COMUNICACIONES?TEMPLATE_DEMO
-
 ******************************************************************************
-* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 03CBH BYTE (47%) *
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0382H BYTE (43%) *
 ******************************************************************************
 
-Program Size: data=64.1 xdata=0 code=3719
-LINK/LOCATE RUN COMPLETE.  4 WARNING(S),  0 ERROR(S)
+Program Size: data=64.1 xdata=0 code=3646
+LINK/LOCATE RUN COMPLETE.  3 WARNING(S),  0 ERROR(S)

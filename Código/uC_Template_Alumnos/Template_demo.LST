@@ -1,4 +1,4 @@
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/20/2019 08:31:30 PAGE 1   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/20/2019 20:39:12 PAGE 1   
 
 
 C51 COMPILER V8.08, COMPILATION OF MODULE TEMPLATE_DEMO
@@ -62,7 +62,7 @@ line level    source
   52   1              PCON = 0x80;//PCON: power-saving options and general-purpose status flags => SMOD=1 (Double UART Baud Rat
              -e)
   53   1              
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/20/2019 08:31:30 PAGE 2   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/20/2019 20:39:12 PAGE 2   
 
   54   1              TMOD = 0x21;//Timer 1 Set M1 for 8-bit autoreload timer, Timer 0 Set M0 16-bit 
   55   1              TH1  = 0xDC;// 19200 ADuC841        //TH1 holds a value which is to be reloaded into TL1 each time it ove
@@ -126,7 +126,7 @@ line level    source
  111   1         fpga_data = DATA_L + 256*(int)DATA_H;
  112   1      
  113   1         return(fpga_data);  
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/20/2019 08:31:30 PAGE 3   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/20/2019 20:39:12 PAGE 3   
 
  114   1         
  115   1      }
@@ -190,7 +190,7 @@ line level    source
  172   1      
  173   1      
  174   1      }
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/20/2019 08:31:30 PAGE 4   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/20/2019 20:39:12 PAGE 4   
 
 *** WARNING C280 IN LINE 142 OF TEMPLATE_DEMO.C: 'result': unreferenced local variable
  175          /*****************************************************************/
@@ -254,7 +254,7 @@ line level    source
  232   1              {
  233   2                      estado=3;        //se va el coche del parking
  234   2              }
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/20/2019 08:31:30 PAGE 5   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/20/2019 20:39:12 PAGE 5   
 
  235   1      }
  236          
@@ -318,7 +318,7 @@ line level    source
  293   3                               maquinaEstados();
  294   3                              /********* SHT11 Sensor Layer *************************/
  295   3                              printf("Temperatura = %d\n",Temp);
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/20/2019 08:31:30 PAGE 6   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/20/2019 20:39:12 PAGE 6   
 
  296   3                              printf("Humedad = %d\n",Hum);
  297   3                              LDR=_WSN_ADC_conversion();
@@ -350,44 +350,16 @@ line level    source
  323   1      
  324   1         // --------------------------------------------
  325   1      
- 326   1                 printf ("Connected\n\r");                               
- 327   1      
- 328   1                 while (1)
- 329   1                 {
- 330   2                              
- 331   2                         _WS_Timer_Config(1);
- 332   2                         if (flag == 1){
- 333   3      
- 334   3                              _WSN_sensors_reading();
- 335   3                               maquinaEstados();
- 336   3                              /********* SHT11 Sensor Layer *************************/
- 337   3                              printf("Temperatura = %d\n",Temp);
- 338   3                              printf("Humedad = %d\n",Hum);
- 339   3                              LDR=_WSN_ADC_conversion();
- 340   3                              printf("LDR = %d\n", LDR);
- 341   3      
- 342   3                              imprimirestado();
- 343   3                      
- 344   3                         /*******************************************************/
- 345   3                              
- 346   3                              /********* ACC Sensor layer **************************
- 347   3      
- 348   3                              /*****************************************************/                 
- 349   3      
- 350   3                              flag = 0;
- 351   3      
- 352   3                      }                               
- 353   2                                                
- 354   2                 }
- 355   1      
- 356   1      }
- 357          /****************************************************************/
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/20/2019 08:31:30 PAGE 7   
-
+ 326   1                 printf ("Connected\n\r");                                                            
+ 327   1                 Comunicaciones();                      
+ 328   1                 
+ 329   1      
+ 330   1      }
+ 331          /****************************************************************/
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    793    ----
+   CODE SIZE        =    720    ----
    CONSTANT SIZE    =    149    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----

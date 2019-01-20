@@ -8,7 +8,6 @@ Project File Date:  12/04/2013
 
 <h2>Output:</h2>
 Build target 'Target 1'
-assembling START_AD.A51...
 compiling Template_demo.c...
 TEMPLATE_DEMO.C(142): warning C280: 'result': unreferenced local variable
 TEMPLATE_DEMO.C(204): warning C280: 'type': unreferenced local variable
@@ -19,8 +18,6 @@ linking...
     SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?COMUNICACIONES?TEMPLATE_DEMO
-Program Size: data=64.1 xdata=0 code=3719
+Program Size: data=64.1 xdata=0 code=3646
 creating hex file from "demo_wsn"...
-"demo_wsn" - 0 Error(s), 6 Warning(s).
+"demo_wsn" - 0 Error(s), 5 Warning(s).
