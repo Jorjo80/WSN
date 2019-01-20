@@ -2,6 +2,7 @@
 #include <ADuC841.h>
 #include <stdio.h>
 
+
 /**************** FPGA Communication Port: ********************/
 sbit TrigByte1N  = P0^7;		   
 sbit Ack1N       = P0^6;          
@@ -17,7 +18,8 @@ unsigned int datain;
 
 unsigned char flag, c;
 
-unsigned int result,Temp,Hum, LDR, estado=3; 
+unsigned int result,Temp,Hum, LDR; 
+unsigned int estado=3, est_com = 1; 
 //unsigned char configvalue=1;
 unsigned int resulti[2];
 								   
@@ -247,6 +249,67 @@ void imprimirestado()
 	 	printf("Nodo 1: La plaza esta libre");
 	}
 }
+
+void MEST_Comunicaciones()
+{
+	//est_com se inicializa a 1, 1 es el modo de enviar la información cada x tiempo y 2 se envía la información cuando se le pida	
+}
+
+void Comunicaciones()
+{
+	if(est_com == 1)
+	{
+	 	while (1)
+	   {
+	   		
+	   	   _WS_Timer_Config(1);
+	   	   if (flag == 1)
+		   {
+			_WSN_sensors_reading();
+			 maquinaEstados();
+			/********* SHT11 Sensor Layer *************************/
+			printf("Temperatura = %d\n",Temp);
+			printf("Humedad = %d\n",Hum);
+			LDR=_WSN_ADC_conversion();
+			printf("LDR = %d\n", LDR);
+
+			imprimirestado();
+			
+		   /*******************************************************/
+			
+			/********* ACC Sensor layer **************************
+
+			/*****************************************************/			
+
+			flag = 0;
+		  	}
+		}
+	}
+	if(est_com == 2)
+	{
+	 if (flag == 1)
+		{
+			_WSN_sensors_reading();
+			 maquinaEstados();
+			/********* SHT11 Sensor Layer *************************/
+			printf("Temperatura = %d\n",Temp);
+			printf("Humedad = %d\n",Hum);
+			LDR=_WSN_ADC_conversion();
+			printf("LDR = %d\n", LDR);
+
+			imprimirestado();
+			
+		   /*******************************************************/
+			
+			/********* ACC Sensor layer **************************
+
+			/*****************************************************/			
+
+			flag = 0;
+		  	}
+		}
+
+}
 void main()
 {
   
@@ -260,32 +323,7 @@ void main()
 
    // --------------------------------------------
 
-	   printf ("Connected\n\r");	   			   
-
-	   while (1)
-	   {
-	   		
-	   	   _WS_Timer_Config(1);
-	   	   if (flag == 1){
-
-			_WSN_sensors_reading();
-			 maquinaEstados();
-			/********* SHT11 Sensor Layer *************************/
-			printf("Temperatura = %d\n",Temp);
-			printf("Humedad = %d\n",Hum);
-			LDR=_WSN_ADC_conversion();
-			printf("LDR = %d\n", LDR);
-
-			imprimirestado();
-		   /*******************************************************/
-			
-			/********* ACC Sensor layer **************************
-
-			/*****************************************************/			
-
-			flag = 0;
-
-		}				
+	   printf ("Connected\n\r");	   			   				
 	   	 	   		  
 	   }
 

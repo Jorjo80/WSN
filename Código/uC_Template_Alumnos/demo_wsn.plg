@@ -3,27 +3,24 @@
 <pre>
 <h1>µVision3 Build Log</h1>
 <h2>Project:</h2>
-H:\Jorge\UPM\master\WSN\TRABAJO\Práctica\Código\uC_Template_Alumnos\demo_wsn.uv2
+H:\Jorge\UPM\master\WSN\TRABAJO\Práctica\WSN\Código\uC_Template_Alumnos\demo_wsn.uv2
 Project File Date:  12/04/2013
 
 <h2>Output:</h2>
 Build target 'Target 1'
+assembling START_AD.A51...
 compiling Template_demo.c...
-TEMPLATE_DEMO.C(140): warning C280: 'result': unreferenced local variable
-TEMPLATE_DEMO.C(202): warning C280: 'type': unreferenced local variable
-TEMPLATE_DEMO.C(237): error C202: 'estado': undefined identifier
-TEMPLATE_DEMO.C(241): error C202: 'estado': undefined identifier
-TEMPLATE_DEMO.C(245): error C202: 'estado': undefined identifier
-Target not created
-Build target 'Target 1'
-compiling Template_demo.c...
-TEMPLATE_DEMO.C(140): warning C280: 'result': unreferenced local variable
-TEMPLATE_DEMO.C(202): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(142): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(204): warning C280: 'type': unreferenced local variable
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
-Program Size: data=62.1 xdata=0 code=3551
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=64.1 xdata=0 code=3719
 creating hex file from "demo_wsn"...
-"demo_wsn" - 0 Error(s), 4 Warning(s).
+"demo_wsn" - 0 Error(s), 6 Warning(s).
