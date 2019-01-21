@@ -1,4 +1,4 @@
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         11/16/2018 18:14:05 PAGE 1   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/21/2019 17:38:20 PAGE 1   
 
 
 C51 COMPILER V8.08, COMPILATION OF MODULE TEMPLATE_DEMO
@@ -62,7 +62,7 @@ line level    source
   52          {
   53   1              SCON = 0x52;//SCON: UART Serial Port Control Register   => Mode 1: 8-bit UART, variable baud rate
   54   1              PCON = 0x80;//PCON: power-saving options and general-purpose status flags => SMOD=1 (Double UART Baud Rat
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         11/16/2018 18:14:05 PAGE 2   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/21/2019 17:38:20 PAGE 2   
 
              -e)
   55   1              
@@ -126,7 +126,7 @@ line level    source
  112   1         TrigByte2N = 1;    // Release Trigger2
  113   1      
  114   1      
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         11/16/2018 18:14:05 PAGE 3   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/21/2019 17:38:20 PAGE 3   
 
  115   1         fpga_data = DATA_L + 256*(int)DATA_H;
  116   1      
@@ -190,7 +190,7 @@ line level    source
  174   2                 if(/*!flagWait && */SBUF == 't'){    /** If we are not waiting for a particular character, this condition
              - can be removed, so that
  175   3                                                          every received byte will be stored in RX_Buffer     **/
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         11/16/2018 18:14:05 PAGE 4   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/21/2019 17:38:20 PAGE 4   
 
  176   3      
  177   3                        _WSN_Read_UART(RX_Buffer);
@@ -254,7 +254,7 @@ line level    source
  234   1         /************ Temp: ******************/
  235   1         // the temperature value taken from the FPGA has     to be
  236   1         // substracted from 27315 in order to show Degree Celsius x 100                              
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         11/16/2018 18:14:05 PAGE 5   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/21/2019 17:38:20 PAGE 5   
 
  237   1         // Ej: Temp =  ( result - (273.15*100) );      // Degree Celsius x 100
  238   1         // c = 0;
@@ -318,7 +318,7 @@ line level    source
  295          /**************** ZigBee Configuration: ************************/
  296          void _WSN_ZigBee_config(void)
  297          {               
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         11/16/2018 18:14:05 PAGE 6   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/21/2019 17:38:20 PAGE 6   
 
  298   1              char temp_read;
  299   1              _WSN_Write_UART ("AT&F\r\0");
@@ -382,7 +382,7 @@ line level    source
  356                  }
  357          }       
  358          */
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         11/16/2018 18:14:05 PAGE 7   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/21/2019 17:38:20 PAGE 7   
 
  359          /******************* Message Detection: *************************/
  360          void _WSN_message_detect()
@@ -428,8 +428,10 @@ line level    source
  400   3                               _WSN_Write_UART("AT+UCAST:0000,\0");
  401   3                               _WSN_Write_UART("(X,Y): 15,26\n\0");
  402   3                              //_WSN_sensors_reading();
- 403   3                      //_WSN_Write_UART("AT+UCAST:0000,(X,Y): %d, %d\n",(resulti[1]-Accx_inicial), (resulti[0]-Accy_inicial));
- 404   3                      //_WSN_Write_UART("(X,Y): %d, %d\n",(resulti[1]-Accx_inicial), (resulti[0]-Accy_inicial));      
+ 403   3                      _WSN_Write_UART("AT+UCAST:0000,(X,Y): %d, %d\n",(resulti[1]-Accx_inicial), (resulti[0]-Accy_inicial));
+*** ERROR C208 IN LINE 403 OF TEMPLATE_DEMO.C: '__WSN_Write_UART': too many actual parameters
+ 404   3                      _WSN_Write_UART("(X,Y): %d, %d\n",(resulti[1]-Accx_inicial), (resulti[0]-Accy_inicial));        
+*** ERROR C208 IN LINE 404 OF TEMPLATE_DEMO.C: '__WSN_Write_UART': too many actual parameters
  405   3                         
  406   3                              /********* SHT11 Sensor Layer *************************/
  407   3                       
@@ -444,25 +446,13 @@ line level    source
  416   4                              }
  417   3                              flag = 0;
  418   3      
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/21/2019 17:38:20 PAGE 8   
+
  419   3                      }                               
  420   2                                                
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         11/16/2018 18:14:05 PAGE 8   
-
  421   2                 }
  422   1      
  423   1      }
  424          /****************************************************************/
 
-
-MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    597    ----
-   CONSTANT SIZE    =    193    ----
-   XDATA SIZE       =   ----    ----
-   PDATA SIZE       =   ----    ----
-   DATA SIZE        =     44      14
-   IDATA SIZE       =   ----    ----
-   BIT SIZE         =   ----       1
-END OF MODULE INFORMATION.
-
-
-C51 COMPILATION COMPLETE.  2 WARNING(S),  0 ERROR(S)
+C51 COMPILATION COMPLETE.  2 WARNING(S),  2 ERROR(S)

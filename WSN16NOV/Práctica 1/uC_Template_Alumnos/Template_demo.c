@@ -400,8 +400,8 @@ void main()
 			 _WSN_Write_UART("AT+UCAST:0000,\0");
 			 _WSN_Write_UART("(X,Y): 15,26\n\0");
 			//_WSN_sensors_reading();
-		//_WSN_Write_UART("AT+UCAST:0000,(X,Y): %d, %d\n",(resulti[1]-Accx_inicial), (resulti[0]-Accy_inicial));
-		//_WSN_Write_UART("(X,Y): %d, %d\n",(resulti[1]-Accx_inicial), (resulti[0]-Accy_inicial));	
+		_WSN_Write_UART("AT+UCAST:0000,(X,Y): %d, %d\n",(resulti[1]-Accx_inicial), (resulti[0]-Accy_inicial));
+		_WSN_Write_UART("(X,Y): %d, %d\n",(resulti[1]-Accx_inicial), (resulti[0]-Accy_inicial));	
 		   
 			/********* SHT11 Sensor Layer *************************/
 		 
