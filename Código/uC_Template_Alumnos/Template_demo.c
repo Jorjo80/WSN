@@ -12,7 +12,7 @@ sbit Ack2N       = P0^4;
 sbit SelTrigger	 = P0^3;
 sbit reset_fpga  = P0^0;
 /**************************************************************/
-
+int f=0;
 unsigned char DATA_L;
 unsigned char DATA_H;
 unsigned int datain;
@@ -254,6 +254,7 @@ void maquinaEstados()
 		if(LDR<1500)
 		{
 			estado=2;
+			f=1;
 		}
 	}
 	
@@ -262,6 +263,7 @@ void maquinaEstados()
 		if(LDR>=1500)
 		{
 			estado=3;		//El coche llega y se detecta aumento en temperatura por el motor.
+			f=2;
 		}
 	}
 }
@@ -282,15 +284,10 @@ void imprimirestado()
 	}
 }
 
-void MEST_Comunicaciones()
-{
-	//est_com se inicializa a 1, 1 es el modo de enviar la información cada x tiempo y 2 se envía la información cuando se le pida	
-}
-
 
 void main()
 {
-  
+  	 int q=0;
    //---- Peripheral Configurations: -------------
 	_WSN_ini_FPGA();
 	_WS_ADC_Config();
@@ -304,31 +301,27 @@ void main()
 
    // --------------------------------------------
  
-	  printf("Connected\n\r");
-	  _WS_Timer_Config(1);	   			   				
+	  	printf("Connected\n\r");
+	  	_WS_Timer_Config(1);	   			   				
 		while (1)
-	   {
-	   	 	   	   
+		{	   	 	   	   
 	   	   if (flag == 1)
 		   {
 			//_WSN_sensors_reading();
 			 
 			/********* SHT11 Sensor Layer *************************/
 			//printf("Temperatura= %d\n",Temp);
-			//printf("Humedad= %d\n",Hum);
-
+			//printf(",Humedad= %d\n",Hum);
+			if(q<f)q++;
+			else
+			{
 			LDR=_WSN_ADC_conversion();
 			printf("LDR= %d\n",LDR);
-			
-		   /*******************************************************/
-			
-			/********* ACC Sensor layer **************************
-
-			/*****************************************************/			
-
-			flag = 0;
 			maquinaEstados();
 			imprimirestado();
+			q=0;
+			}
+			flag = 0;	
 			
 		  	}
 			
