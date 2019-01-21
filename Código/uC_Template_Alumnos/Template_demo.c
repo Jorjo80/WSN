@@ -319,7 +319,6 @@ void main()
 
 			LDR=_WSN_ADC_conversion();
 			printf("LDR= %d\n",LDR);
-			  printf("Dentro");
 			
 		   /*******************************************************/
 			

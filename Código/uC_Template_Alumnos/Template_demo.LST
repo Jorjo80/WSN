@@ -1,4 +1,4 @@
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/21/2019 18:03:03 PAGE 1   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/21/2019 18:08:25 PAGE 1   
 
 
 C51 COMPILER V8.08, COMPILATION OF MODULE TEMPLATE_DEMO
@@ -62,7 +62,7 @@ line level    source
   51   1              ADCCON2  = 0x03;     // Selects channel 3 & on demand conversion.  (LDR is connected to the ADC3)
   52   1      }
   53          /*****************************************************************/
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/21/2019 18:03:03 PAGE 2   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/21/2019 18:08:25 PAGE 2   
 
   54          
   55          /***************** UART configuration: ***************************/
@@ -126,7 +126,7 @@ line level    source
  110   1         DATA_L = P2;            // LSB
  111   1         TrigByte1N = 1;         // Release Trigger1
  112   1          
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/21/2019 18:03:03 PAGE 3   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/21/2019 18:08:25 PAGE 3   
 
  113   1         TrigByte2N = 0;         //Trigger second data byte
  114   1         while (Ack2N == 1){};
@@ -190,7 +190,7 @@ line level    source
  171   1         /*************************************/
  172   1      
  173   1         /************ Humidity ***************/
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/21/2019 18:03:03 PAGE 4   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/21/2019 18:08:25 PAGE 4   
 
  174   1         //resulti[1] = result[1]*127.5/100;
  175   1         // the humidity value taken form the FPGA has to be multipled
@@ -254,7 +254,7 @@ line level    source
  232                  _WSN_wait_answer('K',0);
  233                  _WSN_Write_UART("AT+JN\r\0");
  234                  _WSN_wait_answer('K',0);
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/21/2019 18:03:03 PAGE 5   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/21/2019 18:08:25 PAGE 5   
 
  235          
  236          } 
@@ -294,15 +294,15 @@ line level    source
  270          {
  271   1              if(estado==1)
  272   1              {
- 273   2                      printf("Nodo 1: La plaza acaba de ocuparse");
+ 273   2                      printf("Nodo 1: La plaza acaba de ocuparse\n");
  274   2              }
  275   1              if(estado==2)
  276   1              {
- 277   2                      printf("Nodo 1: La plaza estaba ocupada");
+ 277   2                      printf("Nodo 1: La plaza estaba ocupada\n");
  278   2              }
  279   1              if(estado==3)
  280   1              {
- 281   2                      printf("Nodo 1: La plaza esta libre");
+ 281   2                      printf("Nodo 1: La plaza esta libre\n");
  282   2              }
  283   1      }
  284          
@@ -318,7 +318,7 @@ line level    source
  293   1        
  294   1         //---- Peripheral Configurations: -------------
  295   1              _WSN_ini_FPGA();
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/21/2019 18:03:03 PAGE 6   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/21/2019 18:08:25 PAGE 6   
 
  296   1              _WS_ADC_Config();
  297   1              _WSN_UART841_config();
@@ -346,29 +346,28 @@ line level    source
  319   3      
  320   3                              LDR=_WSN_ADC_conversion();
  321   3                              printf("LDR= %d\n",LDR);
- 322   3                                printf("Dentro");
- 323   3                              
- 324   3                         /*******************************************************/
- 325   3                              
- 326   3                              /********* ACC Sensor layer **************************
- 327   3      
- 328   3                              /*****************************************************/                 
- 329   3      
- 330   3                              flag = 0;
- 331   3                              maquinaEstados();
- 332   3                              imprimirestado();
- 333   3                              
- 334   3                              }
- 335   2                              
- 336   2                      }
- 337   1      }
- 338                  
- 339          /****************************************************************/
+ 322   3                              
+ 323   3                         /*******************************************************/
+ 324   3                              
+ 325   3                              /********* ACC Sensor layer **************************
+ 326   3      
+ 327   3                              /*****************************************************/                 
+ 328   3      
+ 329   3                              flag = 0;
+ 330   3                              maquinaEstados();
+ 331   3                              imprimirestado();
+ 332   3                              
+ 333   3                              }
+ 334   2                              
+ 335   2                      }
+ 336   1      }
+ 337                  
+ 338          /****************************************************************/
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    500    ----
-   CONSTANT SIZE    =    123    ----
+   CODE SIZE        =    491    ----
+   CONSTANT SIZE    =    119    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
    DATA SIZE        =     46       7
