@@ -259,7 +259,7 @@ void maquinaEstados()
 	
 	else if (estado == 2)
 	{
-		if(LDR>1500)
+		if(LDR>=1500)
 		{
 			estado=3;		//El coche llega y se detecta aumento en temperatura por el motor.
 		}
@@ -270,15 +270,15 @@ void imprimirestado()
 {
  	if(estado==1)
 	{
-	 	printf("Nodo 1: La plaza acaba de ocuparse");
+	 	printf("Nodo 1: La plaza acaba de ocuparse\n");
 	}
 	if(estado==2)
 	{
-	 	printf("Nodo 1: La plaza estaba ocupada");
+	 	printf("Nodo 1: La plaza estaba ocupada\n");
 	}
 	if(estado==3)
 	{
-	 	printf("Nodo 1: La plaza esta libre");
+	 	printf("Nodo 1: La plaza esta libre\n");
 	}
 }
 
