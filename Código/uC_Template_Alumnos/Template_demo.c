@@ -16,10 +16,16 @@ unsigned char DATA_L;
 unsigned char DATA_H;
 unsigned int datain;
 
+unsigned char flagWait, RXFlag;
+unsigned char charWait;
+unsigned char tempo;
+
+unsigned char RX_Buffer[20];
+
 unsigned char flag, c;
 
 unsigned int result,Temp,Hum, LDR; 
-unsigned int estado=3, est_com = 1; 
+unsigned int estado=3, est_com=1; 
 //unsigned char configvalue=1;
 unsigned int resulti[2];
 								   
@@ -60,6 +66,9 @@ void _WSN_UART841_config()
 	ET1 = 0;	// Timer 1 Interruption Disable	
 
 	EA  = 1; 	// Global Enable Interruption Flag
+	
+	RXFlag = 0;
+
 }
 /****************************************************************/
 
@@ -135,6 +144,56 @@ void _WSN_interrupt_TimeInterval() interrupt 10 using 3    //this is the interru
       
 }
 /*****************************************************************/
+void _WSN_Write_UART(char *message)
+{  
+  do{
+	TI = 0;
+  	SBUF = *message++;
+	while (!TI);
+  }while(*message != '\0'); // wait untin null character is read from the TX message
+    TI = 0;
+}
+
+/**************** Serial Reception: ******************************/
+void _WSN_Read_UART(char *message)
+{  
+  do{
+	RI = 0;
+	while (!RI);
+  	*message++ = SBUF;	
+  }while(SBUF != '\r');	 // wait untin null character is read from the RX message
+  *message = '\0'; // Ending writing a null character into the buffer
+}
+
+/***************** Serial Interruption: **************************/
+void _CEI_Serial_interrupt(void) interrupt 4 using 0
+{
+ 	ES = 0;	// Disable Serial Interruption
+
+	// Data Transmision:--------------------
+	//if (TI == 1)   TI = 0;
+
+	//Data Reception: ----------------------
+	if (RI == 1) {
+	   if(/*!flagWait && */SBUF == 't'){	/** If we are not waiting for a particular character, this condition can be removed, so that
+	   					    every received byte will be stored in RX_Buffer	**/
+
+		  _WSN_Read_UART(RX_Buffer);
+		  //RX_Buffer;
+		  // retransmiting the message just for testing:
+		  //_WSN_Write_UART(RX_Buffer);
+		  RXFlag = 1;
+	   }
+	   else if(flagWait == 1 && SBUF == charWait){ /** Condition for waiting an answer prompt, such as 'O' for "OK", etc. **/
+		  flagWait = 0;
+	   }
+	 RI=0;
+	 
+	}//-------------------------------------
+
+	ES = 1; // Esable Serial Interruption
+}
+/*****************************************************************/
 
 /***************** Sensors reading functionalities: ***************/
 void _WSN_sensors_reading(void){				 //we gotta read the humidity and the temperature 
@@ -183,6 +242,10 @@ void _WSN_sensors_reading(void){				 //we gotta read the humidity and the temper
 void _WSN_wait_answer(char ASCII,char getmsj)
 {  
 	unsigned char serial_read,enable;
+	charWait = ASCII;	
+	flagWait = 1;	 
+	while(flagWait);  
+	
 
 	enable = 1;
   
@@ -203,7 +266,19 @@ void _WSN_wait_answer(char ASCII,char getmsj)
 /**************** ZigBee Configuration: ************************/
 void _WSN_ZigBee_config(char type)
 { 
-
+	 char temp_read;
+  	_WSN_Write_UART ("AT&F\r\0");
+  	_WSN_wait_answer('K',0);
+  	_WSN_Write_UART ("ATS12=0590\r\0");
+ 	_WSN_wait_answer('K',0);		
+	_WSN_Write_UART("ATS00=1000\r\0");
+	_WSN_wait_answer('K',0);
+	_WSN_Write_UART("ATS02=0100\r\0");
+	_WSN_wait_answer('K',0);
+	_WSN_Write_UART("ATS03=1111111111111112\r\0");
+	_WSN_wait_answer('K',0);
+	_WSN_Write_UART("AT+JN\r\0");
+	_WSN_wait_answer('K',0);
 
 } 
 /******************* Message Detection: *************************/
@@ -220,17 +295,32 @@ void _WSN_message_detect()
 void maquinaEstados()
 {
 	// se inicializa como libre. estado 3 = libre, estado 2 = ocupado, estado 1 = recién ocupado
-	if (LDR <1000 & Temp > 25 & estado == 3)
+	if (estado == 3)
 	{
-		estado=1;		//El coche llega y se detecta aumento en temperatura por el motor.
+		if(LDR<1500)
+		{
+			if(Temp>2800)
+			{
+				estado=1;		//El coche llega y se detecta aumento en temperatura por el motor.
+			}
+		}
 	}
-	else if(LDR < 1000 & Temp <= 25 & estado == 1)
+	else if (estado == 1)
 	{
-		estado=2;	  //el coche se enfría pero sigue ocupando la plaza
+		if(LDR<1500)
+		{
+			if(Temp<2800)
+			{
+				estado=2;		//El coche llega y se detecta aumento en temperatura por el motor.
+			}
+		}
 	}
-	else if(LDR >=1000 & estado == 2)
+	else if (estado == 2)
 	{
-	 	estado=3;	 //se va el coche del parking
+		if(LDR>1500)
+		{
+			estado=3;		//El coche llega y se detecta aumento en temperatura por el motor.
+		}
 	}
 }
 
@@ -238,15 +328,15 @@ void imprimirestado()
 {
  	if(estado==1)
 	{
-	 	printf("Nodo 1: La plaza acaba de ocuparse");
+	 	_WSN_Write_UART("Nodo 1: La plaza acaba de ocuparse");
 	}
 	if(estado==2)
 	{
-	 	printf("Nodo 1: La plaza estaba ocupada");
+	 	_WSN_Write_UART("Nodo 1: La plaza estaba ocupada");
 	}
 	if(estado==3)
 	{
-	 	printf("Nodo 1: La plaza esta libre");
+	 	_WSN_Write_UART("Nodo 1: La plaza esta libre");
 	}
 }
 
@@ -255,24 +345,39 @@ void MEST_Comunicaciones()
 	//est_com se inicializa a 1, 1 es el modo de enviar la información cada x tiempo y 2 se envía la información cuando se le pida	
 }
 
-void Comunicaciones()
+
+void main()
 {
-	if(est_com == 1)
-	{
+  
+   //---- Peripheral Configurations: -------------
+	_WSN_ini_FPGA();
+	_WS_ADC_Config();
+	_WSN_UART841_config();
+	_WS_Timer_Config(1);
+
+	//_WSN_ZigBee_config();
+	
+   c = 0;
+   flag = 0;
+
+   // --------------------------------------------
+ 
+	  printf("Connected\n\r");	   			   				
+	   if(est_com == 1)
+		{
+		printf("EStamos en estado 1");
 	 	while (1)
-	   {
-	   		
-	   	   _WS_Timer_Config(1);
+	   {	 
+	   			   	   
 	   	   if (flag == 1)
 		   {
 			_WSN_sensors_reading();
 			 maquinaEstados();
 			/********* SHT11 Sensor Layer *************************/
-			printf("Temperatura = %d\n",Temp);
-			printf("Humedad = %d\n",Hum);
+			printf("Temperatura= %d\n",Temp);
+			printf("Humedad= %d\n",Hum);
 			LDR=_WSN_ADC_conversion();
-			printf("LDR = %d\n", LDR);
-
+			printf("LDR= %d\n",LDR);
 			imprimirestado();
 			
 		   /*******************************************************/
@@ -287,16 +392,19 @@ void Comunicaciones()
 	}
 	if(est_com == 2)
 	{
-	 if (flag == 1)
+	printf("Estamos en estado 2");
+		while (1)
+	   {
+	 	_WS_Timer_Config(1);
+	 	if (flag == 1)
 		{
 			_WSN_sensors_reading();
 			 maquinaEstados();
 			/********* SHT11 Sensor Layer *************************/
-			printf("Temperatura = %d\n",Temp);
-			printf("Humedad = %d\n",Hum);
+			printf("Temperatura= %d\n",Temp);
+			printf("Humedad= %d\n",Hum);
 			LDR=_WSN_ADC_conversion();
-			printf("LDR = %d\n", LDR);
-
+			printf("LDR= %d\n",LDR);
 			imprimirestado();
 			
 		   /*******************************************************/
@@ -308,24 +416,8 @@ void Comunicaciones()
 			flag = 0;
 		  	}
 		}
-
+	   		  
+	}   
 }
-void main()
-{
-  
-   //---- Peripheral Configurations: -------------
-	_WSN_ini_FPGA();
-	_WS_ADC_Config();
-	_WSN_UART841_config();
-	
-   c = 0;
-   flag = 0;
 
-   // --------------------------------------------
-
-	   printf ("Connected\n\r");	   			   				
-	   Comunicaciones();	   		  
-	   
-
-}
 /****************************************************************/
