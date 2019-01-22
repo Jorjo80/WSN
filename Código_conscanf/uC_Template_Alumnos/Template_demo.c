@@ -1,7 +1,8 @@
 
 #include <ADuC841.h>
 #include <stdio.h>
-#include <windows.h>
+#include <stdlib.h>
+#include <string.h>
 
 
 /**************** FPGA Communication Port: ********************/
@@ -17,12 +18,13 @@ unsigned char DATA_L;
 unsigned char DATA_H;
 unsigned int datain;
 
-unsigned char flagWait, RXFlag;
+unsigned char flagWait, RX_flag, RY_flag;
 unsigned char charWait;
+unsigned char flagInterrupt=0;
 unsigned char tempo;
 
 unsigned char RX_Buffer[20];
-
+char Mensaje[60], aux[20];
 unsigned char flag, c;
 
 unsigned int result,Temp,Hum, LDR; 
@@ -123,6 +125,62 @@ int _WSN_FPGA(bit sensorSelector)	 //if we set this function at 0, we get 0 for 
    
 }
 /*****************************************************************/
+
+ void _WSN_Write_UART(char *message)
+{  
+  do{
+	TI = 0;
+  	SBUF = *message++;
+	while (!TI);
+  }while(*message != '\0'); // wait untin null character is read from the TX message
+    TI = 0;
+}		   
+
+/**************** Serial Reception: ******************************/
+void _WSN_Read_UART(char *message)
+{  
+  do{
+	RI = 0;
+	while (!RI);
+  	*message++ = SBUF;	
+  }while(SBUF != '\r');	 // wait untin null character is read from the RX message
+  *message = '\0'; // Ending writing a null character into the buffer
+}																	
+		   
+/***************** Serial Interruption: **************************/
+  
+void _CEI_Serial_interrupt(void) interrupt 4 using 0
+{
+ 	ES = 0;	// Disable Serial Interruption
+
+	// Data Transmision:--------------------
+	 //if (TI == 1)   TI = 0;
+
+	//Data Reception: ----------------------
+	if (RI == 1) {
+	   
+	   if(/*!flagWait && */SBUF == 'w'){	// If we are not waiting for a particular character, this condition can be removed, so that every received byte will be stored in RX_Buffer	
+		  _WSN_Read_UART(RX_Buffer);
+		  // retransmiting the message just for testing:
+		  //_WSN_Write_UART(RX_Buffer);
+		  RX_flag = 1;
+	   }
+		else if(/*!flagWait && */SBUF == 'z'){	// If we are not waiting for a particular character, this condition can be removed, so that every received byte will be stored in RX_Buffer	
+		  _WSN_Read_UART(RX_Buffer);
+		  // retransmiting the message just for testing:
+		  //_WSN_Write_UART(RX_Buffer);
+		  RY_flag = 1;
+	   }
+
+	   else if(flagWait == 1 && SBUF == charWait){ // Condition for waiting an answer prompt, such as 'O' for "OK", etc. 
+		  flagWait = 0;
+	   }
+	 RI=0;
+	}//-------------------------------------
+
+	ES = 1; // Esable Serial Interruption
+}
+
 																	
 /***************** Timer Interruption: ***************************/
 void _WSN_interrupt_TimeInterval() interrupt 10 using 3    //this is the interruption of the timer. we jump into this function and we process a flag we're activating
@@ -194,46 +252,29 @@ void _WSN_sensors_reading(void){				 //we gotta read the humidity and the temper
 
 void _WSN_wait_answer(char ASCII,char getmsj)
 {  
-	unsigned char serial_read,enable;
 	charWait = ASCII;	
 	flagWait = 1;	 
-	while(flagWait);  
-	
-
-	enable = 1;
-  
-	     do
-		{
-			serial_read = _getkey(); 
-	
-			if (serial_read == ASCII) 
-			{											 
-			 	enable = 0;
-			}
-			else if (getmsj == 1)
-			{
-				putchar(serial_read);
-			}			
-		}while (enable != 0);
+	while(flagWait);
+	flagWait = 1;
 }
 /**************** ZigBee Configuration: ************************/
-/*void _WSN_ZigBee_config(char type)
-{ 
-	 char temp_read;
-  	_WSN_Write_UART ("AT&F\r\0");
-  	_WSN_wait_answer('K',0);
-  	_WSN_Write_UART ("ATS12=0590\r\0");
- 	_WSN_wait_answer('K',0);		
-	_WSN_Write_UART("ATS00=1000\r\0");
-	_WSN_wait_answer('K',0);
-	_WSN_Write_UART("ATS02=0100\r\0");
-	_WSN_wait_answer('K',0);
-	_WSN_Write_UART("ATS03=1111111111111112\r\0");
-	_WSN_wait_answer('K',0);
-	_WSN_Write_UART("AT+JN\r\0");
-	_WSN_wait_answer('K',0);
-
-} 
+void _WSN_ZigBee_config(char type)
+{ 		
+	_WSN_Write_UART("AT&F\n\r\0");
+	_WSN_wait_answer('O',0);
+	_WSN_Write_UART("ATS00=0040\n\r\0");
+	_WSN_wait_answer('O',0);
+	_WSN_Write_UART("ATS02=0007\n\r\0");
+	_WSN_wait_answer('O',0);
+	_WSN_Write_UART("ATS03=1111111111111117\n\r\0");
+	_WSN_wait_answer('O',0);
+	//printf("AT+DASSL\n");
+	//_WSN_wait_answer('O',0);
+	_WSN_Write_UART("ATZ\n\r\0");
+	_WSN_wait_answer('O',0);
+	_WSN_Write_UART("AT+JN\n\r\0");
+	_WSN_wait_answer('J',0);
+}
 /******************* Message Detection: *************************/
 void _WSN_message_detect()
 {  
@@ -272,21 +313,22 @@ void imprimirestado()
 {
  	if(estado==1)
 	{
-	 	printf("Nodo 1: La plaza acaba de ocuparse\n");
+	 	_WSN_Write_UART("Nodo 1: La plaza acaba de ocuparse\n");
 	}
 	if(estado==2)
 	{
-	 	printf("Nodo 1: La plaza estaba ocupada\n");
+	 	_WSN_Write_UART("Nodo 1: La plaza estaba ocupada\n");
 	}
 	if(estado==3)
 	{
-	 	printf("Nodo 1: La plaza esta libre\n");
+	 	_WSN_Write_UART("Nodo 1: La plaza esta libre\n");
 	}
 }
 
 
 void main()
-{
+{	 
+
   	 int q=0;
    //---- Peripheral Configurations: -------------
 	_WSN_ini_FPGA();
@@ -301,7 +343,7 @@ void main()
 
    // --------------------------------------------
  
-	  	printf("Connected\n\r");
+	  	_WSN("Connected\n\r");
 	  	_WS_Timer_Config(1);	   			   				
 		while (1)
 		{	   	 	   	   
@@ -316,7 +358,8 @@ void main()
 			else
 			{
 			LDR=_WSN_ADC_conversion();
-			printf("LDR= %d\n",LDR);
+			sprintf(aux,"LDR= %d\n",LDR);
+			_WSN_Write_UART(aux);
 			maquinaEstados();
 			imprimirestado();
 			q=0;
