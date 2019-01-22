@@ -21,7 +21,6 @@ unsigned int datain;
 unsigned char flagWait, RX_flag;
 unsigned char charWait;
 unsigned char flagInterrupt=0;
-unsigned char tempo;
 
 unsigned char RX_Buffer[20];
 char aux[20];
@@ -72,9 +71,7 @@ void _WSN_UART841_config()
 	
 
 }
-/****************************************************************/
 
-/****************** ADC Conversion: *****************************/
 int _WSN_ADC_conversion()
 {
 	unsigned int sensorData;
@@ -204,45 +201,16 @@ void _WSN_sensors_reading(void){				 //we gotta read the humidity and the temper
 
    int result[2], i;
 
-   	//_WSN_FPGA(0) = Temperature, ACC Y;
 	Temp=_WSN_FPGA(0);
 	Temp =  ( Temp - (273.15*100) );
 	
 	for(i=0;i<1000;i++);
 
-	//_WSN_FPGA(1) = Humidity, ACC X;
+
 	Hum=_WSN_FPGA(1);
 	Hum =  ( (Hum*127.0)/100 );
 
-   /************ Temp: ******************/
-   //resulti[0]=result[0]*100/27315;
-   // the temperature value taken from the FPGA has	to be
-   // substracted from 27315 in order to show Degree Celsius x 100				
-   // Ej: Temp =  ( result - (273.15*100) );	  // Degree Celsius x 100
-   // c = 0;
-   /*************************************/
-
-   /************ Humidity ***************/
-   //resulti[1] = result[1]*127.5/100;
-   // the humidity value taken form the FPGA has to be multipled
-   // by 127.5 and divided by 100 in order to show H% x 100.
-   // Ej: Hum =  ( (result*127.0)/100 );
-   // c = 0;
-   /*************************************/
-   
-   /************ Light: ******************/
-
-   /**************************************/	
-
-
 }
-/*****************************************************************/
-
-/****************** ZigBee read: *********************************/
-/** ASCII  = Value of the character to wait.
-/** getsmj = It allows to get caracters from the serial port and 
-/** print them until ASCII arrives. 
-**/
 
 void _WSN_wait_answer(char ASCII,char getmsj)
 {  
@@ -262,8 +230,6 @@ void _WSN_ZigBee_config(char type)
 	_WSN_wait_answer('O',0);
 	_WSN_Write_UART("ATS03=1111111111111117\n\r\0");
 	_WSN_wait_answer('O',0);
-	//printf("AT+DASSL\n");
-	//_WSN_wait_answer('O',0);
 	_WSN_Write_UART("ATZ\n\r\0");
 	_WSN_wait_answer('O',0);
 	_WSN_Write_UART("AT+JN\n\r\0");
@@ -301,14 +267,6 @@ void maquinaEstados()
 			f=2;
 		}
 	}
-}
-
-void imprimirestado()
-{
- 	if(estado==1)
-	{
-	 	_WSN_Write_UART("Nodo 1: La plaza acaba de ocuparse\n");
-	}
 	if(estado==2)
 	{
 	 	_WSN_Write_UART("Nodo 1: La plaza estaba ocupada\n");
@@ -317,8 +275,8 @@ void imprimirestado()
 	{
 	 	_WSN_Write_UART("Nodo 1: La plaza esta libre\n");
 	}
-}
 
+}
 
 void main()
 {	 
@@ -346,8 +304,7 @@ void main()
 			//_WSN_sensors_reading();
 			 
 			/********* SHT11 Sensor Layer *************************/
-			//printf("Temperatura= %d\n",Temp);
-			//printf(",Humedad= %d\n",Hum);
+
 			if(q<f)q++;
 			else
 			{
@@ -355,7 +312,6 @@ void main()
 			sprintf(aux,"LDR= %d\n",LDR);
 			_WSN_Write_UART(aux);
 			maquinaEstados();
-			imprimirestado();
 			q=0;
 			}
 			flag = 0;	
