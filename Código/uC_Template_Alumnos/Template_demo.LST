@@ -1,4 +1,4 @@
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/21/2019 18:23:37 PAGE 1   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/22/2019 19:25:31 PAGE 1   
 
 
 C51 COMPILER V8.08, COMPILATION OF MODULE TEMPLATE_DEMO
@@ -62,7 +62,7 @@ line level    source
   51   1              ADCCON2  = 0x03;     // Selects channel 3 & on demand conversion.  (LDR is connected to the ADC3)
   52   1      }
   53          /*****************************************************************/
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/21/2019 18:23:37 PAGE 2   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/22/2019 19:25:31 PAGE 2   
 
   54          
   55          /***************** UART configuration: ***************************/
@@ -126,7 +126,7 @@ line level    source
  110   1         DATA_L = P2;            // LSB
  111   1         TrigByte1N = 1;         // Release Trigger1
  112   1          
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/21/2019 18:23:37 PAGE 3   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/22/2019 19:25:31 PAGE 3   
 
  113   1         TrigByte2N = 0;         //Trigger second data byte
  114   1         while (Ack2N == 1){};
@@ -190,7 +190,7 @@ line level    source
  171   1         /*************************************/
  172   1      
  173   1         /************ Humidity ***************/
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/21/2019 18:23:37 PAGE 4   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/22/2019 19:25:31 PAGE 4   
 
  174   1         //resulti[1] = result[1]*127.5/100;
  175   1         // the humidity value taken form the FPGA has to be multipled
@@ -254,7 +254,7 @@ line level    source
  232                  _WSN_wait_answer('K',0);
  233                  _WSN_Write_UART("AT+JN\r\0");
  234                  _WSN_wait_answer('K',0);
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/21/2019 18:23:37 PAGE 5   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/22/2019 19:25:31 PAGE 5   
 
  235          
  236          } 
@@ -318,7 +318,7 @@ line level    source
  294   1              _WSN_UART841_config();
  295   1              
  296   1      
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/21/2019 18:23:37 PAGE 6   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/22/2019 19:25:31 PAGE 6   
 
  297   1              //_WSN_ZigBee_config();
  298   1              
