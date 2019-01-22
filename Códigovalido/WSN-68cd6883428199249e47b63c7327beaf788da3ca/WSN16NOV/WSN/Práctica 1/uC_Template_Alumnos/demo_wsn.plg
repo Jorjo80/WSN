@@ -1,0 +1,387 @@
+<html>
+<body>
+<pre>
+<h1>µVision3 Build Log</h1>
+<h2>Project:</h2>
+C:\Documents and Settings\Admin\Escritorio\WSN\Práctica 1\uC_Template_Alumnos\demo_wsn.uv2
+Project File Date:  12/04/2013
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(229): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(276): warning C209: '__WSN_ZigBee_config': too few actual parameters
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+Program Size: data=62.2 xdata=0 code=2922
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(229): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(276): warning C209: '__WSN_ZigBee_config': too few actual parameters
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+Program Size: data=62.2 xdata=0 code=2923
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(229): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(231): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(279): warning C209: '__WSN_ZigBee_config': too few actual parameters
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+Program Size: data=54.1 xdata=0 code=1831
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(229): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(231): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(283): warning C209: '__WSN_ZigBee_config': too few actual parameters
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+Program Size: data=54.1 xdata=0 code=1886
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(229): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(231): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(283): warning C209: '__WSN_ZigBee_config': too few actual parameters
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+Program Size: data=54.1 xdata=0 code=1886
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(229): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(231): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(283): warning C209: '__WSN_ZigBee_config': too few actual parameters
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+Program Size: data=54.1 xdata=0 code=1900
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(229): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(231): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(283): warning C209: '__WSN_ZigBee_config': too few actual parameters
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+Program Size: data=54.1 xdata=0 code=1900
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(229): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(231): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(283): warning C209: '__WSN_ZigBee_config': too few actual parameters
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+Program Size: data=54.1 xdata=0 code=1900
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(229): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(231): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(283): warning C209: '__WSN_ZigBee_config': too few actual parameters
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+Program Size: data=54.1 xdata=0 code=1900
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(139): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(228): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(230): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(282): warning C209: '__WSN_ZigBee_config': too few actual parameters
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+Program Size: data=52.1 xdata=0 code=1900
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(139): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(228): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(230): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(282): warning C209: '__WSN_ZigBee_config': too few actual parameters
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+Program Size: data=52.1 xdata=0 code=1890
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(139): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(228): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(230): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(282): warning C209: '__WSN_ZigBee_config': too few actual parameters
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+Program Size: data=52.1 xdata=0 code=1917
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(139): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(228): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(231): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(285): warning C209: '__WSN_ZigBee_config': too few actual parameters
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+Program Size: data=52.1 xdata=0 code=1923
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(139): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(228): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(231): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(285): warning C209: '__WSN_ZigBee_config': too few actual parameters
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_SENSORS_READING?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+Program Size: data=56.2 xdata=0 code=1885
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(193): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(292): error C237: '__WSN_wait_answer': function already has a body
+TEMPLATE_DEMO.C(300): error C141: syntax error near 'char'
+TEMPLATE_DEMO.C(300): error C202: 'temp_read': undefined identifier
+TEMPLATE_DEMO.C(357): error C141: syntax error near '}'
+TEMPLATE_DEMO.C(357): error C141: syntax error near '/'
+Target not created
+Build target 'Target 1'
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(193): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(292): error C237: '__WSN_wait_answer': function already has a body
+TEMPLATE_DEMO.C(300): error C141: syntax error near 'char'
+TEMPLATE_DEMO.C(300): error C202: 'temp_read': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(193): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(266): error C141: syntax error near 'unsigned'
+TEMPLATE_DEMO.C(266): error C202: 'serial_read': undefined identifier
+TEMPLATE_DEMO.C(268): error C202: 'enable': undefined identifier
+TEMPLATE_DEMO.C(272): error C202: 'serial_read': undefined identifier
+TEMPLATE_DEMO.C(274): error C202: 'serial_read': undefined identifier
+TEMPLATE_DEMO.C(276): error C202: 'enable': undefined identifier
+TEMPLATE_DEMO.C(280): error C202: 'serial_read': undefined identifier
+TEMPLATE_DEMO.C(282): error C202: 'enable': undefined identifier
+TEMPLATE_DEMO.C(298): error C141: syntax error near 'char'
+TEMPLATE_DEMO.C(298): error C202: 'temp_read': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(193): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(266): error C141: syntax error near 'unsigned'
+TEMPLATE_DEMO.C(266): error C202: 'serial_read': undefined identifier
+TEMPLATE_DEMO.C(268): error C202: 'enable': undefined identifier
+TEMPLATE_DEMO.C(272): error C202: 'serial_read': undefined identifier
+TEMPLATE_DEMO.C(274): error C202: 'serial_read': undefined identifier
+TEMPLATE_DEMO.C(276): error C202: 'enable': undefined identifier
+TEMPLATE_DEMO.C(280): error C202: 'serial_read': undefined identifier
+TEMPLATE_DEMO.C(282): error C202: 'enable': undefined identifier
+TEMPLATE_DEMO.C(298): error C141: syntax error near 'char'
+TEMPLATE_DEMO.C(298): error C202: 'temp_read': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(193): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(266): error C141: syntax error near 'unsigned'
+TEMPLATE_DEMO.C(266): error C202: 'serial_read': undefined identifier
+TEMPLATE_DEMO.C(268): error C202: 'enable': undefined identifier
+TEMPLATE_DEMO.C(272): error C202: 'serial_read': undefined identifier
+TEMPLATE_DEMO.C(274): error C202: 'serial_read': undefined identifier
+TEMPLATE_DEMO.C(276): error C202: 'enable': undefined identifier
+TEMPLATE_DEMO.C(280): error C202: 'serial_read': undefined identifier
+TEMPLATE_DEMO.C(282): error C202: 'enable': undefined identifier
+TEMPLATE_DEMO.C(298): error C141: syntax error near 'char'
+TEMPLATE_DEMO.C(298): error C202: 'temp_read': undefined identifier
+Target not created
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(193): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(266): error C141: syntax error near 'unsigned'
+TEMPLATE_DEMO.C(266): error C202: 'serial_read': undefined identifier
+TEMPLATE_DEMO.C(268): error C202: 'enable': undefined identifier
+TEMPLATE_DEMO.C(272): error C202: 'serial_read': undefined identifier
+TEMPLATE_DEMO.C(274): error C202: 'serial_read': undefined identifier
+TEMPLATE_DEMO.C(276): error C202: 'enable': undefined identifier
+TEMPLATE_DEMO.C(280): error C202: 'serial_read': undefined identifier
+TEMPLATE_DEMO.C(282): error C202: 'enable': undefined identifier
+TEMPLATE_DEMO.C(298): error C141: syntax error near 'char'
+TEMPLATE_DEMO.C(298): error C202: 'temp_read': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(193): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(266): error C141: syntax error near 'unsigned'
+TEMPLATE_DEMO.C(266): error C202: 'serial_read': undefined identifier
+TEMPLATE_DEMO.C(268): error C202: 'enable': undefined identifier
+TEMPLATE_DEMO.C(272): error C202: 'serial_read': undefined identifier
+TEMPLATE_DEMO.C(274): error C202: 'serial_read': undefined identifier
+TEMPLATE_DEMO.C(276): error C202: 'enable': undefined identifier
+TEMPLATE_DEMO.C(280): error C202: 'serial_read': undefined identifier
+TEMPLATE_DEMO.C(282): error C202: 'enable': undefined identifier
+TEMPLATE_DEMO.C(298): error C141: syntax error near 'char'
+TEMPLATE_DEMO.C(298): error C202: 'temp_read': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(193): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(266): error C141: syntax error near 'unsigned'
+TEMPLATE_DEMO.C(266): error C202: 'serial_read': undefined identifier
+TEMPLATE_DEMO.C(268): error C202: 'enable': undefined identifier
+TEMPLATE_DEMO.C(272): error C202: 'serial_read': undefined identifier
+TEMPLATE_DEMO.C(274): error C202: 'serial_read': undefined identifier
+TEMPLATE_DEMO.C(276): error C202: 'enable': undefined identifier
+TEMPLATE_DEMO.C(280): error C202: 'serial_read': undefined identifier
+TEMPLATE_DEMO.C(282): error C202: 'enable': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(193): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(293): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(295): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(380): warning C209: '__WSN_ZigBee_config': too few actual parameters
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_SENSORS_READING?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+Program Size: data=64.1 xdata=0 code=1130
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(193): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(293): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(295): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(380): warning C209: '__WSN_ZigBee_config': too few actual parameters
+TEMPLATE_DEMO.C(381): error C205: can't call an interrupt function
+Target not created
+Build target 'Target 1'
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(193): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(295): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(381): error C205: can't call an interrupt function
+Target not created
+Build target 'Target 1'
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(193): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(295): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_SENSORS_READING?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+Program Size: data=63.1 xdata=0 code=1120
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(196): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(298): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_SENSORS_READING?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+Program Size: data=65.1 xdata=0 code=1126
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(196): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(298): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_SENSORS_READING?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+Program Size: data=64.1 xdata=0 code=1123
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(196): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(298): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_SENSORS_READING?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+Program Size: data=64.1 xdata=0 code=1123
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 5 Warning(s).

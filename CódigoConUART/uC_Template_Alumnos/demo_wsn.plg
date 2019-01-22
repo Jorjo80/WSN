@@ -1,0 +1,28 @@
+<html>
+<body>
+<pre>
+<h1>µVision3 Build Log</h1>
+<h2>Project:</h2>
+H:\Jorge\UPM\master\WSN\TRABAJO\Práctica\WSN\CódigoConUART\uC_Template_Alumnos\demo_wsn.uv2
+Project File Date:  12/04/2013
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(205): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(247): warning C280: 'getmsj': unreferenced local variable
+TEMPLATE_DEMO.C(255): warning C280: 'type': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_SENSORS_READING?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** ERROR L107: ADDRESS SPACE OVERFLOW
+    SPACE:   DATA    
+    SEGMENT: _DATA_GROUP_
+    LENGTH:  001FH
+Program Size: data=116.2 xdata=0 code=3733
+Target not created

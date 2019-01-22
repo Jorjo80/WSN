@@ -1,0 +1,699 @@
+<html>
+<body>
+<pre>
+<h1>µVision3 Build Log</h1>
+<h2>Project:</h2>
+H:\Jorge\UPM\master\WSN\TRABAJO\Práctica\WSN\Código\uC_Template_Alumnos\demo_wsn.uv2
+Project File Date:  12/04/2013
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(347): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(351): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(354): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(377): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(381): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(384): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(427): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(431): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(434): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(457): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(461): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(464): warning C182: pointer to different objects
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=92.1 xdata=0 code=4198
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 19 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(347): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(351): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(354): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(377): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(381): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(384): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(427): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(431): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(434): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(457): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(461): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(464): warning C182: pointer to different objects
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=67.1 xdata=0 code=2546
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 19 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(347): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(351): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(354): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(377): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(381): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(384): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(429): error C208: '__WSN_Write_UART': too many actual parameters
+Target not created
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(347): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(351): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(354): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(377): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(381): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(384): warning C182: pointer to different objects
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=92.1 xdata=0 code=4201
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 13 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(347): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(351): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(354): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(377): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(381): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(384): warning C182: pointer to different objects
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=92.1 xdata=0 code=4230
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 13 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(347): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(351): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(354): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(377): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(381): warning C182: pointer to different objects
+TEMPLATE_DEMO.C(384): warning C182: pointer to different objects
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=92.1 xdata=0 code=4259
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 13 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=92.1 xdata=0 code=4002
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=92.1 xdata=0 code=3951
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(300): error C202: 'LRD': undefined identifier
+TEMPLATE_DEMO.C(310): error C202: 'LRD': undefined identifier
+TEMPLATE_DEMO.C(320): error C202: 'LRD': undefined identifier
+Target not created
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=92.1 xdata=0 code=3955
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(423): error C141: syntax error near ''
+Target not created
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=92.1 xdata=0 code=3961
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=92.1 xdata=0 code=3960
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=92.1 xdata=0 code=3850
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=92.1 xdata=0 code=3847
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=92.1 xdata=0 code=3847
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=92.1 xdata=0 code=3961
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=92.1 xdata=0 code=3966
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=92.1 xdata=0 code=3966
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(390): warning C206: 'delay': missing function-prototype
+TEMPLATE_DEMO.C(390): error C267: 'delay': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(390): warning C206: 'delay': missing function-prototype
+TEMPLATE_DEMO.C(390): error C267: 'delay': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(390): warning C206: 'delay': missing function-prototype
+TEMPLATE_DEMO.C(390): error C267: 'delay': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(390): warning C206: 'sleep': missing function-prototype
+TEMPLATE_DEMO.C(390): error C267: 'sleep': requires ANSI-style prototype
+TEMPLATE_DEMO.C(390): error C141: syntax error near ':'
+Target not created
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(390): warning C206: 'sleep': missing function-prototype
+TEMPLATE_DEMO.C(390): error C267: 'sleep': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+Template_demo.c(4): warning C318: can't open file 'windows.h'
+TEMPLATE_DEMO.C(202): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(268): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(270): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(391): warning C206: 'sleep': missing function-prototype
+TEMPLATE_DEMO.C(391): error C267: 'sleep': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+Template_demo.c(4): warning C318: can't open file 'windows.h'
+TEMPLATE_DEMO.C(202): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(268): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(270): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(391): warning C206: 'Sleep': missing function-prototype
+TEMPLATE_DEMO.C(391): error C267: 'Sleep': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+Template_demo.c(4): warning C318: can't open file 'windows.h'
+TEMPLATE_DEMO.C(202): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(268): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(270): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(391): error C141: syntax error near 'if'
+TEMPLATE_DEMO.C(391): error C141: syntax error near '==', expected ')'
+TEMPLATE_DEMO.C(393): error C141: syntax error near '<string>'
+Target not created
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+Template_demo.c(4): warning C318: can't open file 'windows.h'
+TEMPLATE_DEMO.C(202): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(268): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(270): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=92.1 xdata=0 code=3859
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+Template_demo.c(4): warning C318: can't open file 'windows.h'
+TEMPLATE_DEMO.C(202): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(268): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(270): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=92.1 xdata=0 code=3839
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+Template_demo.c(4): warning C318: can't open file 'windows.h'
+TEMPLATE_DEMO.C(202): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(268): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(270): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=92.1 xdata=0 code=3840
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+Template_demo.c(4): warning C318: can't open file 'windows.h'
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=92.1 xdata=0 code=3837
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+Template_demo.c(4): warning C318: can't open file 'windows.h'
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=92.1 xdata=0 code=3837
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+Template_demo.c(4): warning C318: can't open file 'windows.h'
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=92.1 xdata=0 code=3836
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+Template_demo.c(4): warning C318: can't open file 'windows.h'
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+TEMPLATE_DEMO.C(375): error C208: '__WSN_Write_UART': too many actual parameters
+TEMPLATE_DEMO.C(376): error C208: '__WSN_Write_UART': too many actual parameters
+TEMPLATE_DEMO.C(378): error C208: '__WSN_Write_UART': too many actual parameters
+Target not created
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+Template_demo.c(4): warning C318: can't open file 'windows.h'
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=92.1 xdata=0 code=3833
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+Template_demo.c(4): warning C318: can't open file 'windows.h'
+TEMPLATE_DEMO.C(201): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(267): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(269): warning C280: 'temp_read': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=92.1 xdata=0 code=3805
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 7 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+Template_demo.c(4): warning C318: can't open file 'windows.h'
+TEMPLATE_DEMO.C(153): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(222): warning C206: '_WSN_Write_UART': missing function-prototype
+TEMPLATE_DEMO.C(222): error C267: '_WSN_Write_UART': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+Template_demo.c(4): warning C318: can't open file 'windows.h'
+TEMPLATE_DEMO.C(153): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(283): warning C206: '_WSN_Write_UART': missing function-prototype
+TEMPLATE_DEMO.C(283): error C267: '_WSN_Write_UART': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+Template_demo.c(4): warning C318: can't open file 'windows.h'
+TEMPLATE_DEMO.C(153): warning C280: 'result': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=87.1 xdata=0 code=3491
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+Template_demo.c(4): warning C318: can't open file 'windows.h'
+TEMPLATE_DEMO.C(153): warning C280: 'result': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=87.1 xdata=0 code=3494
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+Template_demo.c(4): warning C318: can't open file 'windows.h'
+TEMPLATE_DEMO.C(153): warning C280: 'result': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_ADC_CONVERSION?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_SENSORS_READING?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=91.2 xdata=0 code=3416
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+Template_demo.c(4): warning C318: can't open file 'windows.h'
+TEMPLATE_DEMO.C(153): warning C280: 'result': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_SENSORS_READING?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=91.2 xdata=0 code=3447
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+Template_demo.c(4): warning C318: can't open file 'windows.h'
+TEMPLATE_DEMO.C(153): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(334): error C202: 'i': undefined identifier
+Target not created
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+Template_demo.c(4): warning C318: can't open file 'windows.h'
+TEMPLATE_DEMO.C(153): warning C280: 'result': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_SENSORS_READING?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=91.1 xdata=0 code=3601
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+Template_demo.c(4): warning C318: can't open file 'windows.h'
+TEMPLATE_DEMO.C(153): warning C280: 'result': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_SENSORS_READING?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=91.2 xdata=0 code=3447
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+Template_demo.c(4): warning C318: can't open file 'windows.h'
+TEMPLATE_DEMO.C(153): warning C280: 'result': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_SENSORS_READING?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_MESSAGE_DETECT?TEMPLATE_DEMO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MEST_COMUNICACIONES?TEMPLATE_DEMO
+Program Size: data=91.2 xdata=0 code=3400
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 5 Warning(s).
