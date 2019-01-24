@@ -23,7 +23,7 @@ unsigned char charWait;
 unsigned char flagInterrupt=0;
 
 unsigned char RX_Buffer[20];
-char aux[20];
+char aux[15];
 unsigned char flag, c;
 
 unsigned int result,Temp,Hum, LDR; 
@@ -309,7 +309,7 @@ void main()
 			else
 			{
 			LDR=_WSN_ADC_conversion();
-			sprintf(aux,"LDR= %d\n",LDR);
+			sprintf(aux,"LDR= %d\n\0",LDR);
 			_WSN_Write_UART(aux);
 			maquinaEstados();
 			q=0;
