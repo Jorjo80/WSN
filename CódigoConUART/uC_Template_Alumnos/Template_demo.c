@@ -14,6 +14,8 @@ sbit SelTrigger	 = P0^3;
 sbit reset_fpga  = P0^0;
 /**************************************************************/
 int f=0;
+int q=0;
+int j =0; 
 unsigned char DATA_L;
 unsigned char DATA_H;
 unsigned int datain;
@@ -23,7 +25,7 @@ unsigned char charWait;
 unsigned char flagInterrupt=0;
 
 unsigned char RX_Buffer[20];
-char aux[15];
+char aux[10];
 unsigned char flag, c;
 
 unsigned int result,Temp,Hum, LDR; 
@@ -64,12 +66,12 @@ void _WSN_UART841_config()
 	TR1  = 1;   //Start timer 1
 
 	TI  = 1;   //bit1(SCON): Serial Port Transmit Interrupt Flag.
-	ES  = 0;	// Serial Port interruption disable
+	ES  = 1;	// Serial Port interruption enable
 	ET1 = 0;	// Timer 1 Interruption Disable	
 
 	EA  = 1; 	// Global Enable Interruption Flag
-	
 
+	RX_flag = 0;
 }
 
 int _WSN_ADC_conversion()
@@ -162,6 +164,10 @@ void _CEI_Serial_interrupt(void) interrupt 4 using 0
 		  
 		  RX_flag = 2;
 	   }
+	   	else if(/*!flagWait && */SBUF == 't'){	// If we are not waiting for a particular character, this condition can be removed, so that every received byte will be stored in RX_Buffer	
+	  
+		  RX_flag = 3;
+	   }
 
 	   else if(flagWait == 1 && SBUF == charWait){ // Condition for waiting an answer prompt, such as 'O' for "OK", etc. 
 		  flagWait = 0;
@@ -222,8 +228,6 @@ void _WSN_wait_answer(char ASCII,char getmsj)
 /**************** ZigBee Configuration: ************************/
 void _WSN_ZigBee_config(char type)
 { 		
-	_WSN_Write_UART("AT&F\n\r\0");
-	_WSN_wait_answer('O',0);
 	_WSN_Write_UART("ATS00=0040\n\r\0");
 	_WSN_wait_answer('O',0);
 	_WSN_Write_UART("ATS02=0007\n\r\0");
@@ -236,16 +240,20 @@ void _WSN_ZigBee_config(char type)
 	_WSN_wait_answer('J',0);
 }
 /******************* Message Detection: *************************/
-void _WSN_message_detect()
-{  
- 	_WSN_wait_answer('U',0);
-	_WSN_wait_answer(':',0);
-	_WSN_wait_answer(',',1);
-	 putchar('\t');
-	_WSN_wait_answer('=',0);
-	_WSN_wait_answer(0x03,1); 
-}
+
 /******************* Main Function: *****************************/
+void imprimirestado()
+{
+ 	if(estado==2)
+	{
+	 	_WSN_Write_UART("Nodo 1: La plaza esta ocupada\n\r");
+	}
+	if(estado==3)
+	{
+	 	_WSN_Write_UART("Nodo 1: La plaza esta libre\n\r");
+	}
+}
+
 void maquinaEstados()
 {
 	// se inicializa como libre. estado 3 = libre, estado 2 = ocupado, estado 1 = recién ocupado
@@ -267,21 +275,78 @@ void maquinaEstados()
 			f=2;
 		}
 	}
-	if(estado==2)
-	{
-	 	_WSN_Write_UART("Nodo 1: La plaza estaba ocupada\n");
-	}
-	if(estado==3)
-	{
-	 	_WSN_Write_UART("Nodo 1: La plaza esta libre\n");
-	}
+
 
 }
+
+
+void EnviarDatos(void)
+{ 	
+	if(RX_flag==1)
+	{			 
+		est_com=1;
+		RX_flag=0;
+		j=0;
+	}
+	if(RX_flag==2)
+	{
+		est_com=2;
+		RX_flag=0;
+		j=0;
+	}
+	if(est_com==1)
+	{
+	  if (flag == 1)
+		{
+			//_WSN_sensors_reading();
+			 
+			/********* SHT11 Sensor Layer *************************/
+
+			if(q<f)q++;
+			else
+			{
+			LDR=_WSN_ADC_conversion();
+			maquinaEstados();
+			imprimirestado();
+			sprintf(aux,"LDR= %d\n\r",LDR);
+			_WSN_Write_UART(aux);
+			
+			q=0;
+			}
+			flag = 0;			
+		  }  
+	}
+	if (est_com==2)
+	{
+	   LDR=_WSN_ADC_conversion();
+		maquinaEstados();
+		flag = 0;
+		if(RX_flag==3)
+		{	 
+			sprintf(aux,"LDR= %d\r",LDR);
+			_WSN_Write_UART(aux);
+			imprimirestado();			
+			RX_flag=0;
+		}
+		else
+		{
+			while(j<1)
+			{
+				_WSN_Write_UART("Esperando llamada");
+				j++;
+			}
+		}
+	}
+			
+}
+
+
 
 void main()
 {	 
 
-  	 int q=0;
+
+	 _WSN_UART841_config();
    //---- Peripheral Configurations: -------------
 	_WSN_ini_FPGA();
 	_WS_ADC_Config();
@@ -298,26 +363,8 @@ void main()
 	  	_WSN_Write_UART("Connected\n\r");
 	  	_WS_Timer_Config(1);	   			   				
 		while (1)
-		{	   	 	   	   
-	   	   if (flag == 1)
-		   {
-			//_WSN_sensors_reading();
-			 
-			/********* SHT11 Sensor Layer *************************/
-
-			if(q<f)q++;
-			else
-			{
-			LDR=_WSN_ADC_conversion();
-			sprintf(aux,"LDR= %d\n\0",LDR);
-			_WSN_Write_UART(aux);
-			maquinaEstados();
-			q=0;
-			}
-			flag = 0;	
-			
-		  	}
-			
+		{	  	 	   	  
+			EnviarDatos();		
 		}
 }
 	
