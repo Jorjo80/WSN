@@ -353,7 +353,7 @@ void main()
 	_WSN_UART841_config();
 	
 
-	//_WSN_ZigBee_config();
+	_WSN_ZigBee_config();
 	
    c = 'O';
    flag = 0;
