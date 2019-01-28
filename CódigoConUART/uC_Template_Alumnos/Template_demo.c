@@ -332,7 +332,7 @@ void EnviarDatos(void)
 		{
 			while(j<1)
 			{
-				_WSN_Write_UART("Esperando llamada");
+				_WSN_Write_UART("Esperando llamada\r");
 				j++;
 			}
 		}
