@@ -1,0 +1,22 @@
+<html>
+<body>
+<pre>
+<h1>µVision3 Build Log</h1>
+<h2>Project:</h2>
+H:\Jorge\UPM\master\WSN\TRABAJO\Práctica\WSN\Plaza2\uC_Template_Alumnos\demo_wsn.uv2
+Project File Date:  01/29/2019
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling START_AD.A51...
+compiling Template_demo.c...
+TEMPLATE_DEMO.C(213): warning C280: 'result': unreferenced local variable
+TEMPLATE_DEMO.C(226): warning C280: 'getmsj': unreferenced local variable
+TEMPLATE_DEMO.C(234): warning C280: 'type': unreferenced local variable
+TEMPLATE_DEMO.C(380): warning C209: '__WSN_ZigBee_config': too few actual parameters
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_WSN_SENSORS_READING?TEMPLATE_DEMO
+Program Size: data=9.1 xdata=73 code=2457
+creating hex file from "demo_wsn"...
+"demo_wsn" - 0 Error(s), 5 Warning(s).
