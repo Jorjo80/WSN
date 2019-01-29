@@ -29,7 +29,7 @@ char aux[10];
 unsigned char flag, c;
 
 unsigned int result,Temp,Hum, LDR; 
-unsigned int estado=3, est_com=1; 
+unsigned int estado=3, est_com=2; 
 
 unsigned int resulti[2];
 								   
@@ -315,6 +315,7 @@ void EnviarDatos(void)
 			if(q<f)q++;
 			else
 			{
+		   	
 			LDR=_WSN_ADC_conversion();
 			maquinaEstados();
 			imprimirestado(); 	
@@ -324,13 +325,14 @@ void EnviarDatos(void)
 		  }  
 	}
 	if (est_com==2)
-	{
-	   LDR=_WSN_ADC_conversion();
+	{  
+		
+	   	LDR=_WSN_ADC_conversion();
 		maquinaEstados();
 		flag = 0;
 		if(RX_flag==3)
 		{	 
-			imprimirestado();			
+			imprimirestado();		
 			RX_flag=0;
 		}
 		else if(RX_flag==4)
@@ -354,8 +356,10 @@ void EnviarDatos(void)
 		else
 		{
 			while(j<1)
-			{	_WSN_Write_UART("AT+UCAST:0000=");
-				_WSN_Write_UART("Esperando llamada\r");
+			{	
+				
+				_WSN_Write_UART("AT+UCAST:0000=");
+				_WSN_Write_UART("Esperando llamada\n\r");
 				j++;
 			}
 		}
@@ -373,7 +377,6 @@ void main()
    //---- Peripheral Configurations: -------------
 	_WSN_ini_FPGA();
 	_WS_ADC_Config();
-	_WSN_UART841_config();
 	_WSN_ZigBee_config();
 	
    c = 'O';
@@ -384,7 +387,8 @@ void main()
 	  	_WSN_Write_UART("Connected\n\r");
 	  	_WS_Timer_Config(1);	   			   				
 		while (1)
-		{	  	 	   	  
+		{	
+	 	   	  
 			EnviarDatos();		
 		}
 }

@@ -1,4 +1,4 @@
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/29/2019 17:27:30 PAGE 1   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/29/2019 18:07:39 PAGE 1   
 
 
 C51 COMPILER V8.08, COMPILATION OF MODULE TEMPLATE_DEMO
@@ -38,7 +38,7 @@ line level    source
   29          unsigned char flag, c;
   30          
   31          unsigned int result,Temp,Hum, LDR; 
-  32          unsigned int estado=3, est_com=1; 
+  32          unsigned int estado=3, est_com=2; 
   33          
   34          unsigned int resulti[2];
   35                                                                             
@@ -62,7 +62,7 @@ line level    source
   53   1              ADCCON1  = 0xAC;     // ADCCON1: ADC Configuration: 12 clock periods for each conversion.              
              -                                                       
   54   1              ADCCON2  = 0x03;     // Selects channel 3 & on demand conversion.  (LDR is connected to the ADC3)
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/29/2019 17:27:30 PAGE 2   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/29/2019 18:07:39 PAGE 2   
 
   55   1      }
   56          /*****************************************************************/
@@ -126,7 +126,7 @@ line level    source
  111   1         DATA_L = P2;            // LSB
  112   1         TrigByte1N = 1;         // Release Trigger1
  113   1          
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/29/2019 17:27:30 PAGE 3   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/29/2019 18:07:39 PAGE 3   
 
  114   1         TrigByte2N = 0;         //Trigger second data byte
  115   1         while (Ack2N == 1){};
@@ -190,7 +190,7 @@ line level    source
  170   3                 }
  171   2                      else if(/*!flagWait && */SBUF == 'f'|| SBUF =='F')
  172   2                      {
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/29/2019 17:27:30 PAGE 4   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/29/2019 18:07:39 PAGE 4   
 
  173   3                              RX_flag=4;      // If we are not waiting for a particular character, this condition can be removed, so that 
              -every received byte will be stored in RX_Buffer       
@@ -254,7 +254,7 @@ line level    source
  228   1              charWait = ASCII;       
  229   1              flagWait = 1;    
  230   1              while(flagWait);
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/29/2019 17:27:30 PAGE 5   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/29/2019 18:07:39 PAGE 5   
 
  231   1              flagWait = 1;
  232   1      }
@@ -318,7 +318,7 @@ line level    source
  288   1      
  289   1      }
  290          
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/29/2019 17:27:30 PAGE 6   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/29/2019 18:07:39 PAGE 6   
 
  291          
  292          void EnviarDatos(void)
@@ -347,89 +347,93 @@ line level    source
  315   3                              if(q<f)q++;
  316   3                              else
  317   3                              {
- 318   4                              LDR=_WSN_ADC_conversion();
- 319   4                              maquinaEstados();
- 320   4                              imprimirestado();       
- 321   4                              q=0;
- 322   4                              }
- 323   3                              flag = 0;                       
- 324   3                        }  
- 325   2              }
- 326   1              if (est_com==2)
- 327   1              {
- 328   2                 LDR=_WSN_ADC_conversion();
- 329   2                      maquinaEstados();
- 330   2                      flag = 0;
- 331   2                      if(RX_flag==3)
- 332   2                      {        
- 333   3                              imprimirestado();                       
- 334   3                              RX_flag=0;
- 335   3                      }
- 336   2                      else if(RX_flag==4)
- 337   2                      {                        
- 338   3                              if(estado==3)
- 339   3                              {
- 340   4                                      _WSN_Write_UART("AT+UCAST:0000=");
- 341   4                                      _WSN_Write_UART("Plaza 1 está libre\n");
- 342   4                              }
- 343   3                              RX_flag=0;
- 344   3                      }
- 345   2                      else if(RX_flag==5)
- 346   2                      {       
- 347   3                              if(estado==2)
- 348   3                              {
- 349   4                                      _WSN_Write_UART("AT+UCAST:0000=");
- 350   4                                      _WSN_Write_UART("Plaza 1 está ocupada\n");
- 351   4                              }
- 352   3                              RX_flag=0;
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/29/2019 17:27:30 PAGE 7   
+ 318   4                              
+ 319   4                              LDR=_WSN_ADC_conversion();
+ 320   4                              maquinaEstados();
+ 321   4                              imprimirestado();       
+ 322   4                              q=0;
+ 323   4                              }
+ 324   3                              flag = 0;                       
+ 325   3                        }  
+ 326   2              }
+ 327   1              if (est_com==2)
+ 328   1              {  
+ 329   2                      
+ 330   2                      LDR=_WSN_ADC_conversion();
+ 331   2                      maquinaEstados();
+ 332   2                      flag = 0;
+ 333   2                      if(RX_flag==3)
+ 334   2                      {        
+ 335   3                              imprimirestado();               
+ 336   3                              RX_flag=0;
+ 337   3                      }
+ 338   2                      else if(RX_flag==4)
+ 339   2                      {                        
+ 340   3                              if(estado==3)
+ 341   3                              {
+ 342   4                                      _WSN_Write_UART("AT+UCAST:0000=");
+ 343   4                                      _WSN_Write_UART("Plaza 1 está libre\n\r");
+ 344   4                              }
+ 345   3                              RX_flag=0;
+ 346   3                      }
+ 347   2                      else if(RX_flag==5)
+ 348   2                      {       
+ 349   3                              if(estado==2)
+ 350   3                              {
+ 351   4                                      _WSN_Write_UART("AT+UCAST:0000=");
+ 352   4                                      _WSN_Write_UART("Plaza 1 está ocupada\n\r");
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/29/2019 18:07:39 PAGE 7   
 
- 353   3                      }
- 354   2                      else
- 355   2                      {
- 356   3                              while(j<1)
- 357   3                              {       _WSN_Write_UART("AT+UCAST:0000=");
- 358   4                                      _WSN_Write_UART("Esperando llamada\r");
- 359   4                                      j++;
- 360   4                              }
- 361   3                      }
- 362   2              }
- 363   1                              
- 364   1      }
- 365          
- 366          
- 367          
- 368          void main()
- 369          {        
- 370   1      
- 371   1      
- 372   1               _WSN_UART841_config();
- 373   1         //---- Peripheral Configurations: -------------
- 374   1              _WSN_ini_FPGA();
- 375   1              _WS_ADC_Config();
- 376   1              _WSN_UART841_config();
- 377   1              _WSN_ZigBee_config();
-*** WARNING C209 IN LINE 377 OF TEMPLATE_DEMO.C: '__WSN_ZigBee_config': too few actual parameters
- 378   1              
- 379   1         c = 'O';
- 380   1         flag = 0;
- 381   1      
- 382   1         // --------------------------------------------
- 383   1       
- 384   1                      _WSN_Write_UART("Connected\n\r");
- 385   1                      _WS_Timer_Config(1);                                                            
- 386   1                      while (1)
- 387   1                      {                                 
- 388   2                              EnviarDatos();          
- 389   2                      }
- 390   1      }
- 391                  
- 392          /****************************************************************/
+ 353   4                              }
+ 354   3                              RX_flag=0;
+ 355   3                      }
+ 356   2                      else
+ 357   2                      {
+ 358   3                              while(j<1)
+ 359   3                              {       
+ 360   4                                      
+ 361   4                                      _WSN_Write_UART("AT+UCAST:0000=");
+ 362   4                                      _WSN_Write_UART("Esperando llamada\n\r");
+ 363   4                                      j++;
+ 364   4                              }
+ 365   3                      }
+ 366   2              }
+ 367   1                              
+ 368   1      }
+ 369          
+ 370          
+ 371          
+ 372          void main()
+ 373          {        
+ 374   1      
+ 375   1      
+ 376   1               _WSN_UART841_config();
+ 377   1         //---- Peripheral Configurations: -------------
+ 378   1              _WSN_ini_FPGA();
+ 379   1              _WS_ADC_Config();
+ 380   1              _WSN_ZigBee_config();
+*** WARNING C209 IN LINE 380 OF TEMPLATE_DEMO.C: '__WSN_ZigBee_config': too few actual parameters
+ 381   1              
+ 382   1         c = 'O';
+ 383   1         flag = 0;
+ 384   1      
+ 385   1         // --------------------------------------------
+ 386   1       
+ 387   1                      _WSN_Write_UART("Connected\n\r");
+ 388   1                      _WS_Timer_Config(1);                                                            
+ 389   1                      while (1)
+ 390   1                      {       
+ 391   2                                
+ 392   2                              EnviarDatos();          
+ 393   2                      }
+ 394   1      }
+ 395                  
+ 396          /****************************************************************/
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   1110    ----
-   CONSTANT SIZE    =    222    ----
+   CODE SIZE        =   1107    ----
+   CONSTANT SIZE    =    225    ----
    XDATA SIZE       =     62      12
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
