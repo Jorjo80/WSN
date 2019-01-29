@@ -1,9 +1,9 @@
-A51 MACRO ASSEMBLER  START_AD                                                             01/28/2019 17:56:39 PAGE     1
+A51 MACRO ASSEMBLER  START_AD                                                             01/29/2019 17:27:30 PAGE     1
 
 
 MACRO ASSEMBLER A51 V8.00d
 OBJECT MODULE PLACED IN START_AD.OBJ
-ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE START_AD.A51 SET(SMALL) DEBUG EP
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE START_AD.A51 SET(LARGE) DEBUG EP
 
 LOC  OBJ            LINE     SOURCE
 
@@ -33,7 +33,7 @@ LOC  OBJ            LINE     SOURCE
                       24     ;
                       25     ; <q> XRAMEN: Enable on-chip XDATA RAM
                       26     ;     <i> When disabled, off-chip XDATA space is accessed
-  0000                27     XRAMEN EQU 0  ; 0 = Disable on-chip XDATA RAM
+  0001                27     XRAMEN EQU 1  ; 0 = Disable on-chip XDATA RAM
                       28                   ; 1 = Enable  on-chip XDATA RAM
                       29     ;
                       30     ; <e> EXSP: Enable extended XRAM stack (16-bit Stack Pointer)
@@ -65,7 +65,7 @@ LOC  OBJ            LINE     SOURCE
                       56     ;  at processor reset can be defined:
                       57     ;
                       58     ; <o> IDATALEN: IDATA memory size <0x0-0x100>
-A51 MACRO ASSEMBLER  START_AD                                                             01/28/2019 17:56:39 PAGE     2
+A51 MACRO ASSEMBLER  START_AD                                                             01/29/2019 17:27:30 PAGE     2
 
                       59     ;     <i> Note: The absolute start address of IDATA memory is always 0
                       60     ;     <i>       The IDATA space physically overlaps the DATA and BIT areas.
@@ -133,7 +133,7 @@ LOC  OBJ            LINE     SOURCE
                      122     ;  The following EQU statements define the xdata page used for pdata
                      123     ;  variables. The EQU PPAGE must conform with the PPAGE control used
                      124     ;  in the linker invocation.
-A51 MACRO ASSEMBLER  START_AD                                                             01/28/2019 17:56:39 PAGE     3
+A51 MACRO ASSEMBLER  START_AD                                                             01/29/2019 17:27:30 PAGE     3
 
                      125     ;
                      126     ; <q> PPAGEENABLE: Enable PDATA objects
@@ -183,17 +183,17 @@ LOC  OBJ            LINE     SOURCE
                      170     
 0000                 171     STARTUP1:
                      172     
-  0000               173     _CFG8xx EQU (EXSP SHL 7) OR (XRAMEN)
+  0001               173     _CFG8xx EQU (EXSP SHL 7) OR (XRAMEN)
                      174     
                      175     IF _CFG8xx
-                                             ORL     CFG8xx,#_CFG8xx    ; set extended memory modes
-                             ENDIF
+0000 43AF01          176                     ORL     CFG8xx,#_CFG8xx    ; set extended memory modes
+                     177     ENDIF
                      178     
                      179     IF IDATALEN <> 0
-0000 787F            180                     MOV     R0,#IDATALEN - 1
-0002 E4              181                     CLR     A
-0003 F6              182     IDATALOOP:      MOV     @R0,A
-0004 D8FD            183                     DJNZ    R0,IDATALOOP
+0003 787F            180                     MOV     R0,#IDATALEN - 1
+0005 E4              181                     CLR     A
+0006 F6              182     IDATALOOP:      MOV     @R0,A
+0007 D8FD            183                     DJNZ    R0,IDATALOOP
                      184     ENDIF
                      185     
                      186     IF XDATALEN <> 0
@@ -201,7 +201,7 @@ LOC  OBJ            LINE     SOURCE
                                              MOV     R7,#LOW (XDATALEN)
                                IF (LOW (XDATALEN)) <> 0
                                              MOV     R6,#(HIGH (XDATALEN)) +1
-A51 MACRO ASSEMBLER  START_AD                                                             01/28/2019 17:56:39 PAGE     4
+A51 MACRO ASSEMBLER  START_AD                                                             01/29/2019 17:27:30 PAGE     4
 
                                ELSE
                                              MOV     R6,#HIGH (XDATALEN)
@@ -214,7 +214,7 @@ LOC  OBJ            LINE     SOURCE
                              ENDIF
                      200     
                      201     IF PPAGEENABLE <> 0
-0006 75A000          202                     MOV     P2,#PPAGE
+0009 75A000          202                     MOV     P2,#PPAGE
                      203     ENDIF
                      204     
                      205     IF PDATALEN <> 0
@@ -248,7 +248,7 @@ LOC  OBJ            LINE     SOURCE
                                              MOV     SP,#LOW (XSTACKSTART-1)
                                              MOV     SPH,#HIGH (XSTACKSTART-1)
                              ELSE
-0009 758100   F      236                     MOV     SP,#?STACK-1
+000C 758100   F      236                     MOV     SP,#?STACK-1
                      237     ENDIF
                      238     
                      239     ; This code is required if you use L51_BANK.A51 with Banking Mode 4
@@ -260,10 +260,10 @@ LOC  OBJ            LINE     SOURCE
                                             
                              
                      247     ;</h>
-000C 020000   F      248                     LJMP    ?C_START
+000F 020000   F      248                     LJMP    ?C_START
                      249     
                      250                     END
-A51 MACRO ASSEMBLER  START_AD                                                             01/28/2019 17:56:39 PAGE     5
+A51 MACRO ASSEMBLER  START_AD                                                             01/29/2019 17:27:30 PAGE     5
 
 SYMBOL TABLE LISTING
 ------ ----- -------
@@ -271,7 +271,7 @@ SYMBOL TABLE LISTING
 
 N A M E             T Y P E  V A L U E   ATTRIBUTES
 
-?C_C51STARTUP. . .  C SEG    000FH       REL=UNIT
+?C_C51STARTUP. . .  C SEG    0012H       REL=UNIT
 ?C_START . . . . .  C ADDR   -----       EXT
 ?C_STARTUP . . . .  C ADDR   0000H   A   
 ?STACK . . . . . .  I SEG    0001H       REL=UNIT
@@ -280,7 +280,7 @@ EXSP . . . . . . .  N NUMB   0000H   A
 IBPSTACK . . . . .  N NUMB   0000H   A   
 IBPSTACKTOP. . . .  N NUMB   0100H   A   
 IDATALEN . . . . .  N NUMB   0080H   A   
-IDATALOOP. . . . .  C ADDR   0003H   R   SEG=?C_C51STARTUP
+IDATALOOP. . . . .  C ADDR   0006H   R   SEG=?C_C51STARTUP
 P2 . . . . . . . .  D ADDR   00A0H   A   
 PBPSTACK . . . . .  N NUMB   0000H   A   
 PBPSTACKTOP. . . .  N NUMB   0000H   A   
@@ -296,9 +296,9 @@ XBPSTACK . . . . .  N NUMB   0000H   A
 XBPSTACKTOP. . . .  N NUMB   0000H   A   
 XDATALEN . . . . .  N NUMB   0000H   A   
 XDATASTART . . . .  N NUMB   0000H   A   
-XRAMEN . . . . . .  N NUMB   0000H   A   
+XRAMEN . . . . . .  N NUMB   0001H   A   
 XSTACKSTART. . . .  N NUMB   0600H   A   
-_CFG8XX. . . . . .  N NUMB   0000H   A   
+_CFG8XX. . . . . .  N NUMB   0001H   A   
 
 
 REGISTER BANK(S) USED: 0 

@@ -155,19 +155,24 @@ void _CEI_Serial_interrupt(void) interrupt 4 using 0
 
 	if (RI == 1) {
 	   
-	   if(/*!flagWait && */SBUF == 'w'){	// If we are not waiting for a particular character, this condition can be removed, so that every received byte will be stored in RX_Buffer	
+	   if(/*!flagWait && */SBUF == 'w'|| SBUF == 'W'){	// If we are not waiting for a particular character, this condition can be removed, so that every received byte will be stored in RX_Buffer	
 		  _WSN_Read_UART(RX_Buffer);
 		   RX_flag = 1;
 	   }
-		else if(/*!flagWait && */SBUF == 'z'){	// If we are not waiting for a particular character, this condition can be removed, so that every received byte will be stored in RX_Buffer	
+		else if(/*!flagWait && */SBUF == 'z'|| SBUF =='Z'){	// If we are not waiting for a particular character, this condition can be removed, so that every received byte will be stored in RX_Buffer	
 		  _WSN_Read_UART(RX_Buffer);
 		  
 		  RX_flag = 2;
 	   }
-	   	else if(/*!flagWait && */SBUF == 't'){	// If we are not waiting for a particular character, this condition can be removed, so that every received byte will be stored in RX_Buffer	
+	   	else if(/*!flagWait && */SBUF == 't'|| SBUF =='T'){	// If we are not waiting for a particular character, this condition can be removed, so that every received byte will be stored in RX_Buffer	
 	  
 		  RX_flag = 3;
 	   }
+	   	else if(/*!flagWait && */SBUF == 'f'|| SBUF =='F')
+		{
+			RX_flag=4;	// If we are not waiting for a particular character, this condition can be removed, so that every received byte will be stored in RX_Buffer	
+	 	
+	   	}
 
 	   else if(flagWait == 1 && SBUF == charWait){ // Condition for waiting an answer prompt, such as 'O' for "OK", etc. 
 		  flagWait = 0;
@@ -237,7 +242,7 @@ void _WSN_ZigBee_config(char type)
 	_WSN_Write_UART("ATZ\n\r\0");
 	_WSN_wait_answer('O',0);
 	_WSN_Write_UART("AT+JN\n\r\0");
-	_WSN_wait_answer('J',0);
+	_WSN_wait_answer('O',0);
 }
 /******************* Message Detection: *************************/
 
@@ -246,11 +251,13 @@ void imprimirestado()
 {
  	if(estado==2)
 	{
-	 	_WSN_Write_UART("Nodo 1: La plaza esta ocupada\n\r");
+		_WSN_Write_UART("AT+UCAST:0000=");
+	 	_WSN_Write_UART("Plaza 1: La plaza esta ocupada\n\r");
 	}
 	if(estado==3)
-	{
-	 	_WSN_Write_UART("Nodo 1: La plaza esta libre\n\r");
+	{	
+		_WSN_Write_UART("AT+UCAST:0000=");
+	 	_WSN_Write_UART("Plaza 1: La plaza esta libre\n\r");
 	}
 }
 
@@ -263,6 +270,7 @@ void maquinaEstados()
 		if(LDR<1500)
 		{
 			estado=2;
+			RX_flag = 3;
 			f=1;
 		}
 	}
@@ -271,7 +279,8 @@ void maquinaEstados()
 	{
 		if(LDR>=1500)
 		{
-			estado=3;		//El coche llega y se detecta aumento en temperatura por el motor.
+			estado=3;
+			RX_flag = 3;		//El coche llega y se detecta aumento en temperatura por el motor.
 			f=2;
 		}
 	}
@@ -294,6 +303,7 @@ void EnviarDatos(void)
 		RX_flag=0;
 		j=0;
 	}
+
 	if(est_com==1)
 	{
 	  if (flag == 1)
@@ -307,10 +317,7 @@ void EnviarDatos(void)
 			{
 			LDR=_WSN_ADC_conversion();
 			maquinaEstados();
-			imprimirestado();
-			sprintf(aux,"LDR= %d\n\r",LDR);
-			_WSN_Write_UART(aux);
-			
+			imprimirestado(); 	
 			q=0;
 			}
 			flag = 0;			
@@ -323,15 +330,31 @@ void EnviarDatos(void)
 		flag = 0;
 		if(RX_flag==3)
 		{	 
-			sprintf(aux,"LDR= %d\r",LDR);
-			_WSN_Write_UART(aux);
 			imprimirestado();			
+			RX_flag=0;
+		}
+		else if(RX_flag==4)
+		{			 
+	  	 	if(estado==3)
+		 	{
+		 		_WSN_Write_UART("AT+UCAST:0000=");
+				_WSN_Write_UART("Plaza 1 está libre\n\r");
+		 	}
+			RX_flag=0;
+		}
+		else if(RX_flag==5)
+		{	
+			if(estado==2)
+		 	{
+		 		_WSN_Write_UART("AT+UCAST:0000=");
+				_WSN_Write_UART("Plaza 1 está ocupada\n\r");
+		 	}
 			RX_flag=0;
 		}
 		else
 		{
 			while(j<1)
-			{
+			{	_WSN_Write_UART("AT+UCAST:0000=");
 				_WSN_Write_UART("Esperando llamada\r");
 				j++;
 			}
@@ -351,8 +374,6 @@ void main()
 	_WSN_ini_FPGA();
 	_WS_ADC_Config();
 	_WSN_UART841_config();
-	
-
 	_WSN_ZigBee_config();
 	
    c = 'O';

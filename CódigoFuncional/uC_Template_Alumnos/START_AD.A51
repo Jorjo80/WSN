@@ -24,7 +24,7 @@ $NOMOD51
 ;
 ; <q> XRAMEN: Enable on-chip XDATA RAM
 ;     <i> When disabled, off-chip XDATA space is accessed
-XRAMEN EQU 0  ; 0 = Disable on-chip XDATA RAM
+XRAMEN EQU 1  ; 0 = Disable on-chip XDATA RAM
               ; 1 = Enable  on-chip XDATA RAM
 ;
 ; <e> EXSP: Enable extended XRAM stack (16-bit Stack Pointer)
