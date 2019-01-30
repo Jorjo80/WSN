@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.05                                                        01/30/2019  19:17:45  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.05                                                        01/30/2019  19:29:31  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.05, INVOKED BY:
@@ -59,7 +59,7 @@ LINK MAP OF MODULE:  demo_wsn (?C_STARTUP)
             CODE    0F2AH     006CH     UNIT         ?PR?_WSN_SENSORS_READING?TEMPLATE_DEMO
             CODE    0F96H     0040H     UNIT         ?PR?_WSN_ZIGBEE_CONFIG?TEMPLATE_DEMO
             CODE    0FD6H     003EH     UNIT         ?PR?__WSN_WRITE_UART?TEMPLATE_DEMO
-BL51 BANKED LINKER/LOCATER V6.05                                                      01/30/2019  19:17:45  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.05                                                      01/30/2019  19:29:31  PAGE 2
 
 
             CODE    1014H     0039H     UNIT         ?PR?__WSN_READ_UART?TEMPLATE_DEMO
@@ -119,7 +119,7 @@ SEGMENT                                            XDATA_GROUP
 ?PR?IMPRIMIRESTADO?TEMPLATE_DEMO                 -----    -----
   +--> ?PR?__WSN_WRITE_UART?TEMPLATE_DEMO
   +--> ?CO?TEMPLATE_DEMO
-BL51 BANKED LINKER/LOCATER V6.05                                                      01/30/2019  19:17:45  PAGE 3
+BL51 BANKED LINKER/LOCATER V6.05                                                      01/30/2019  19:29:31  PAGE 3
 
 
 
@@ -179,7 +179,7 @@ SYMBOL TABLE OF MODULE:  demo_wsn (?C_STARTUP)
   C:0F2AH         PUBLIC        _WSN_sensors_reading
   B:00D8H.4       PUBLIC        SCONV
   X:0002H         PUBLIC        resulti
-BL51 BANKED LINKER/LOCATER V6.05                                                      01/30/2019  19:17:45  PAGE 4
+BL51 BANKED LINKER/LOCATER V6.05                                                      01/30/2019  19:29:31  PAGE 4
 
 
   B:0080H.6       PUBLIC        Ack1N
@@ -239,7 +239,7 @@ SYMBOL TABLE OF MODULE:  demo_wsn (?C_STARTUP)
   X:001BH         PUBLIC        flagInterrupt
   X:001CH         PUBLIC        q
   C:104DH         PUBLIC        imprimirestado
-BL51 BANKED LINKER/LOCATER V6.05                                                      01/30/2019  19:17:45  PAGE 5
+BL51 BANKED LINKER/LOCATER V6.05                                                      01/30/2019  19:29:31  PAGE 5
 
 
   X:001EH         PUBLIC        datain
@@ -299,7 +299,7 @@ SYMBOL TABLE OF MODULE:  demo_wsn (?C_STARTUP)
   C:1188H         LINE#         96
   C:118AH         LINE#         97
   C:118CH         LINE#         98
-BL51 BANKED LINKER/LOCATER V6.05                                                      01/30/2019  19:17:45  PAGE 6
+BL51 BANKED LINKER/LOCATER V6.05                                                      01/30/2019  19:29:31  PAGE 6
 
 
   C:118EH         LINE#         99
@@ -359,7 +359,7 @@ SYMBOL TABLE OF MODULE:  demo_wsn (?C_STARTUP)
   C:0E5EH         LINE#         157
   C:0E64H         LINE#         158
   C:0E66H         LINE#         159
-BL51 BANKED LINKER/LOCATER V6.05                                                      01/30/2019  19:17:45  PAGE 7
+BL51 BANKED LINKER/LOCATER V6.05                                                      01/30/2019  19:29:31  PAGE 7
 
 
   C:0E71H         LINE#         161
@@ -419,7 +419,7 @@ SYMBOL TABLE OF MODULE:  demo_wsn (?C_STARTUP)
   C:0F96H         LINE#         232
   C:0F96H         LINE#         234
   C:0F9FH         LINE#         235
-BL51 BANKED LINKER/LOCATER V6.05                                                      01/30/2019  19:17:45  PAGE 8
+BL51 BANKED LINKER/LOCATER V6.05                                                      01/30/2019  19:29:31  PAGE 8
 
 
   C:0FA6H         LINE#         236
@@ -479,7 +479,7 @@ SYMBOL TABLE OF MODULE:  demo_wsn (?C_STARTUP)
   C:0BB3H         LINE#         294
   C:0BB3H         LINE#         295
   C:0BBBH         LINE#         296
-BL51 BANKED LINKER/LOCATER V6.05                                                      01/30/2019  19:17:45  PAGE 9
+BL51 BANKED LINKER/LOCATER V6.05                                                      01/30/2019  19:29:31  PAGE 9
 
 
   C:0BC0H         LINE#         297
@@ -539,7 +539,7 @@ SYMBOL TABLE OF MODULE:  demo_wsn (?C_STARTUP)
   C:0CAAH         LINE#         365
   C:0CADH         LINE#         366
   C:0CB6H         LINE#         367
-BL51 BANKED LINKER/LOCATER V6.05                                                      01/30/2019  19:17:45  PAGE 10
+BL51 BANKED LINKER/LOCATER V6.05                                                      01/30/2019  19:29:31  PAGE 10
 
 
   C:0CC4H         LINE#         368
@@ -599,7 +599,7 @@ SYMBOL TABLE OF MODULE:  demo_wsn (?C_STARTUP)
   -------         ENDMOD        ?C?CSTPTR
 
   -------         MODULE        ?C?ILDIX
-BL51 BANKED LINKER/LOCATER V6.05                                                      01/30/2019  19:17:45  PAGE 11
+BL51 BANKED LINKER/LOCATER V6.05                                                      01/30/2019  19:29:31  PAGE 11
 
 
   C:0B88H         PUBLIC        ?C?ILDIX
