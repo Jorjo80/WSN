@@ -20,16 +20,14 @@ unsigned char DATA_L;
 unsigned char DATA_H;
 unsigned int datain;
 
-unsigned char flagWait, RX_flag;
+unsigned char flagWait, RX_flag=0;
 unsigned char charWait;
 unsigned char flagInterrupt=0;
 
-unsigned char RX_Buffer[20];
-char aux[10];
 unsigned char flag, c;
 
 unsigned int result,Temp,Hum, LDR; 
-unsigned int estado=3, est_com=2; 
+unsigned int estado=3, est_com=1; 
 
 unsigned int resulti[2];
 								   
@@ -156,14 +154,13 @@ void _CEI_Serial_interrupt(void) interrupt 4 using 0
 	if (RI == 1) {
 	   
 	   if(/*!flagWait && */SBUF == 'w'|| SBUF == 'W'){	// If we are not waiting for a particular character, this condition can be removed, so that every received byte will be stored in RX_Buffer	
-		  _WSN_Read_UART(RX_Buffer);
 		   RX_flag = 1;
 	   }
-		else if(/*!flagWait && */SBUF == 'z'|| SBUF =='Z'){	// If we are not waiting for a particular character, this condition can be removed, so that every received byte will be stored in RX_Buffer	
-		  _WSN_Read_UART(RX_Buffer);
+	   	else if(/*!flagWait && */SBUF == 'z'|| SBUF =='Z'){	// If we are not waiting for a particular character, this condition can be removed, so that every received byte will be stored in RX_Buffer	
 		  
 		  RX_flag = 2;
 	   }
+
 	   	else if(/*!flagWait && */SBUF == 't'|| SBUF =='T'){	// If we are not waiting for a particular character, this condition can be removed, so that every received byte will be stored in RX_Buffer	
 	  
 		  RX_flag = 3;
@@ -231,8 +228,9 @@ void _WSN_wait_answer(char ASCII,char getmsj)
 	flagWait = 1;
 }
 /**************** ZigBee Configuration: ************************/
-void _WSN_ZigBee_config(char type)
+void _WSN_ZigBee_config(void)
 { 		
+	
 	_WSN_Write_UART("ATS00=0040\n\r\0");
 	_WSN_wait_answer('O',0);
 	_WSN_Write_UART("ATS02=0007\n\r\0");
@@ -251,14 +249,15 @@ void imprimirestado()
 {
  	if(estado==2)
 	{
-		_WSN_Write_UART("AT+UCAST:0000=");
-	 	_WSN_Write_UART("Plaza 1: La plaza esta ocupada\n\r");
+		_WSN_Write_UART("AT+UCAST:0000=\0");
+	 	_WSN_Write_UART("Plaza 1: La plaza esta ocupada\n\r\0");
 	}
 	if(estado==3)
 	{	
-		_WSN_Write_UART("AT+UCAST:0000=");
-	 	_WSN_Write_UART("Plaza 1: La plaza esta libre\n\r");
+		_WSN_Write_UART("AT+UCAST:0000=\0");
+	 	_WSN_Write_UART("Plaza 1: La plaza esta libre\n\r\0");
 	}
+	RX_flag=0;
 }
 
 void maquinaEstados()
@@ -270,7 +269,7 @@ void maquinaEstados()
 		if(LDR<1500)
 		{
 			estado=2;
-			RX_flag = 3;
+			RX_flag = 6;
 			f=1;
 		}
 	}
@@ -280,7 +279,7 @@ void maquinaEstados()
 		if(LDR>=1500)
 		{
 			estado=3;
-			RX_flag = 3;		//El coche llega y se detecta aumento en temperatura por el motor.
+			RX_flag = 6;		//El coche llega y se detecta aumento en temperatura por el motor.
 			f=2;
 		}
 	}
@@ -302,8 +301,9 @@ void EnviarDatos(void)
 		est_com=2;
 		RX_flag=0;
 		j=0;
+		
 	}
-
+	
 	if(est_com==1)
 	{
 	  if (flag == 1)
@@ -325,44 +325,49 @@ void EnviarDatos(void)
 		  }  
 	}
 	if (est_com==2)
-	{  
-		
+	{  		
 	   	LDR=_WSN_ADC_conversion();
 		maquinaEstados();
 		flag = 0;
 		if(RX_flag==3)
 		{	 
-			imprimirestado();		
-			RX_flag=0;
+			imprimirestado();
+		}
+		if(RX_flag==6)
+		{	 
+			imprimirestado();
+			
+		
 		}
 		else if(RX_flag==4)
 		{			 
 	  	 	if(estado==3)
 		 	{
-		 		_WSN_Write_UART("AT+UCAST:0000=");
-				_WSN_Write_UART("Plaza 1 está libre\n\r");
+		 		_WSN_Write_UART("AT+UCAST:0000=\0");
+				_WSN_Write_UART("Plaza 1 está libre\n\r\0");
 		 	}
-			RX_flag=0;
+			
 		}
 		else if(RX_flag==5)
 		{	
 			if(estado==2)
 		 	{
-		 		_WSN_Write_UART("AT+UCAST:0000=");
-				_WSN_Write_UART("Plaza 1 está ocupada\n\r");
+		 		_WSN_Write_UART("AT+UCAST:0000=\0");
+				_WSN_Write_UART("Plaza 1 está ocupada\n\r\0");
 		 	}
-			RX_flag=0;
+			
 		}
 		else
 		{
 			while(j<1)
 			{	
 				
-				_WSN_Write_UART("AT+UCAST:0000=");
-				_WSN_Write_UART("Esperando llamada\n\r");
+				_WSN_Write_UART("AT+UCAST:0000=\0");
+				_WSN_Write_UART("Esperando llamada\n\r\0");
 				j++;
 			}
 		}
+		RX_flag=0;
 	}
 			
 }
@@ -372,11 +377,11 @@ void EnviarDatos(void)
 void main()
 {	 
 
-
 	 _WSN_UART841_config();
    //---- Peripheral Configurations: -------------
 	_WSN_ini_FPGA();
 	_WS_ADC_Config();
+	_WSN_UART841_config();
 	_WSN_ZigBee_config();
 	
    c = 'O';
@@ -384,11 +389,10 @@ void main()
 
    // --------------------------------------------
  
-	  	_WSN_Write_UART("Connected\n\r");
+	  	_WSN_Write_UART("Connected\n\r\0");
 	  	_WS_Timer_Config(1);	   			   				
 		while (1)
-		{	
-	 	   	  
+		{	 	   	  
 			EnviarDatos();		
 		}
 }

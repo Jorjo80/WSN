@@ -1,4 +1,4 @@
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/29/2019 21:48:36 PAGE 1   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/30/2019 18:22:49 PAGE 1   
 
 
 C51 COMPILER V8.08, COMPILATION OF MODULE TEMPLATE_DEMO
@@ -62,7 +62,7 @@ line level    source
   53   1              ADCCON1  = 0xAC;     // ADCCON1: ADC Configuration: 12 clock periods for each conversion.              
              -                                                       
   54   1              ADCCON2  = 0x03;     // Selects channel 3 & on demand conversion.  (LDR is connected to the ADC3)
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/29/2019 21:48:36 PAGE 2   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/30/2019 18:22:49 PAGE 2   
 
   55   1      }
   56          /*****************************************************************/
@@ -126,7 +126,7 @@ line level    source
  111   1         DATA_L = P2;            // LSB
  112   1         TrigByte1N = 1;         // Release Trigger1
  113   1          
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/29/2019 21:48:36 PAGE 3   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/30/2019 18:22:49 PAGE 3   
 
  114   1         TrigByte2N = 0;         //Trigger second data byte
  115   1         while (Ack2N == 1){};
@@ -190,7 +190,7 @@ line level    source
  170   3                 }
  171   2                      else if(/*!flagWait && */SBUF == 'f'|| SBUF =='F')
  172   2                      {
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/29/2019 21:48:36 PAGE 4   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/30/2019 18:22:49 PAGE 4   
 
  173   3                              RX_flag=4;      // If we are not waiting for a particular character, this condition can be removed, so that 
              -every received byte will be stored in RX_Buffer       
@@ -254,7 +254,7 @@ line level    source
  228   1              charWait = ASCII;       
  229   1              flagWait = 1;    
  230   1              while(flagWait);
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/29/2019 21:48:36 PAGE 5   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/30/2019 18:22:49 PAGE 5   
 
  231   1              flagWait = 1;
  232   1      }
@@ -318,7 +318,7 @@ line level    source
  288   1      
  289   1      }
  290          
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/29/2019 21:48:36 PAGE 6   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/30/2019 18:22:49 PAGE 6   
 
  291          
  292          void EnviarDatos(void)
@@ -382,7 +382,7 @@ line level    source
  350   3                              {
  351   4                                      _WSN_Write_UART("AT+UCAST:0000=");
  352   4                                      _WSN_Write_UART("Plaza 3 está ocupada\n\r");
-C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/29/2019 21:48:36 PAGE 7   
+C51 COMPILER V8.08   TEMPLATE_DEMO                                                         01/30/2019 18:22:49 PAGE 7   
 
  353   4                              }
  354   3                              RX_flag=0;
