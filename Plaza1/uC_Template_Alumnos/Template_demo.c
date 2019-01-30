@@ -1,19 +1,19 @@
 
-#include <ADuC841.h>
+/*#include <ADuC841.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 
 /**************** FPGA Communication Port: ********************/
-sbit TrigByte1N  = P0^7;		   
+/*sbit TrigByte1N  = P0^7;		   
 sbit Ack1N       = P0^6;          
 sbit TrigByte2N  = P0^5;
 sbit Ack2N       = P0^4;
 sbit SelTrigger	 = P0^3;
 sbit reset_fpga  = P0^0;
 /**************************************************************/
-int f=0;
+/*int f=0;
 int q=0;
 int j =0; 
 unsigned char DATA_L;
@@ -33,7 +33,7 @@ unsigned int resulti[2];
 								   
 
 /***************** Timer Configuration: **************************/
-void _WS_Timer_Config(char value)//this function follows the frequency of the checking of the sensors
+/*void _WS_Timer_Config(char value)//this function follows the frequency of the checking of the sensors
 {
    	IEIP2 	= 0xA4; // TIC Interruption enable
 	SEC 	= 0x00;
@@ -42,11 +42,11 @@ void _WS_Timer_Config(char value)//this function follows the frequency of the ch
 	HOUR	= 0x00;
 	INTVAL	= value;	//**(Config.)	
 	TIMECON	= 0x53; 	// The timer interrupt each second **(Config.)	/* 0x43 = 1/128 seconds */
-}	
+//}	
 /*****************************************************************/
 
 /***************** ADC Configuration: ****************************/
-void _WS_ADC_Config (void)	   //it'll help us get information from the LDR
+/*void _WS_ADC_Config (void)	   //it'll help us get information from the LDR
 {
   	ADCCON1  = 0xAC;     // ADCCON1: ADC Configuration: 12 clock periods for each conversion.                                                                     
 	ADCCON2  = 0x03;     // Selects channel 3 & on demand conversion.  (LDR is connected to the ADC3)
@@ -54,7 +54,7 @@ void _WS_ADC_Config (void)	   //it'll help us get information from the LDR
 /*****************************************************************/
 
 /***************** UART configuration: ***************************/
-void _WSN_UART841_config()
+/*void _WSN_UART841_config()
 {
 	SCON = 0x52;//SCON: UART Serial Port Control Register	=> Mode 1: 8-bit UART, variable baud rate
 	PCON = 0x80;//PCON: power-saving options and general-purpose status flags => SMOD=1 (Double UART Baud Rate)
@@ -90,7 +90,7 @@ int _WSN_ADC_conversion()
 /*****************************************************************/
 
 /****************** FPGA Initial config. *************************/
-void _WSN_ini_FPGA(void)
+/*void _WSN_ini_FPGA(void)
 { 
  	   TrigByte1N  = 1;		   
 	   TrigByte2N  = 1;
@@ -98,7 +98,7 @@ void _WSN_ini_FPGA(void)
 	   reset_fpga  = 1;
 }
 /****************** FPGA-DATA capture: **************************/
-int _WSN_FPGA(bit sensorSelector)	 //if we set this function at 0, we get 0 for the temp and one for the humidity value, which is a percentage
+/*int _WSN_FPGA(bit sensorSelector)	 //if we set this function at 0, we get 0 for the temp and one for the humidity value, which is a percentage
 {     
    unsigned int fpga_data;
          
@@ -123,7 +123,7 @@ int _WSN_FPGA(bit sensorSelector)	 //if we set this function at 0, we get 0 for 
 }
 /*****************************************************************/
 
- void _WSN_Write_UART(char *message)
+ /*void _WSN_Write_UART(char *message)
 {  
   do{
 	TI = 0;
@@ -134,7 +134,7 @@ int _WSN_FPGA(bit sensorSelector)	 //if we set this function at 0, we get 0 for 
 }		   
 
 /**************** Serial Reception: ******************************/
-void _WSN_Read_UART(char *message)
+/*void _WSN_Read_UART(char *message)
 {  
   do{
 	RI = 0;
@@ -146,26 +146,26 @@ void _WSN_Read_UART(char *message)
 		   
 /***************** Serial Interruption: **************************/
   
-void _CEI_Serial_interrupt(void) interrupt 4 using 0
+/*void _CEI_Serial_interrupt(void) interrupt 4 using 0
 {
  	ES = 0;	// Disable Serial Interruption
 
 
 	if (RI == 1) {
 	   
-	   if(/*!flagWait && */SBUF == 'w'|| SBUF == 'W'){	// If we are not waiting for a particular character, this condition can be removed, so that every received byte will be stored in RX_Buffer	
-		   RX_flag = 1;
+	   if(/SBUF == 'w'|| SBUF == 'W'){	// If we are not waiting for a particular character, this condition can be removed, so that every received byte will be stored in RX_Buffer	
+/*		   RX_flag = 1;
 	   }
-	   	else if(/*!flagWait && */SBUF == 'z'|| SBUF =='Z'){	// If we are not waiting for a particular character, this condition can be removed, so that every received byte will be stored in RX_Buffer	
+	   	else if(SBUF == 'z'|| SBUF =='Z'){	// If we are not waiting for a particular character, this condition can be removed, so that every received byte will be stored in RX_Buffer	
 		  
 		  RX_flag = 2;
 	   }
 
-	   	else if(/*!flagWait && */SBUF == 't'|| SBUF =='T'){	// If we are not waiting for a particular character, this condition can be removed, so that every received byte will be stored in RX_Buffer	
+	   	else if(SBUF == 't'|| SBUF =='T'){	// If we are not waiting for a particular character, this condition can be removed, so that every received byte will be stored in RX_Buffer	
 	  
 		  RX_flag = 3;
 	   }
-	   	else if(/*!flagWait && */SBUF == 'f'|| SBUF =='F')
+	   	else if(SBUF == 'f'|| SBUF =='F')
 		{
 			RX_flag=4;	// If we are not waiting for a particular character, this condition can be removed, so that every received byte will be stored in RX_Buffer	
 	 	
@@ -182,12 +182,12 @@ void _CEI_Serial_interrupt(void) interrupt 4 using 0
 
 																	
 /***************** Timer Interruption: ***************************/
-void _WSN_interrupt_TimeInterval() interrupt 10 using 3    //this is the interruption of the timer. we jump into this function and we process a flag we're activating
+/*void _WSN_interrupt_TimeInterval() interrupt 10 using 3    //this is the interruption of the timer. we jump into this function and we process a flag we're activating
 { 
    //unsigned int result,Temp,Hum,LDR,Axis;
 
       /** DO NOT EDIT *********/
-	   c++;
+	   /*c++;
 	   if (c==2){
 	     reset_fpga = 0;
 		 reset_fpga = 1;
@@ -196,7 +196,7 @@ void _WSN_interrupt_TimeInterval() interrupt 10 using 3    //this is the interru
 	  /************************/
    
    
-   flag = 1;
+  /* flag = 1;
 
       
 }
@@ -205,7 +205,7 @@ void _WSN_interrupt_TimeInterval() interrupt 10 using 3    //this is the interru
 /*****************************************************************/
 
 /***************** Sensors reading functionalities: ***************/
-void _WSN_sensors_reading(void){				 //we gotta read the humidity and the temperature 
+/*void _WSN_sensors_reading(void){				 //we gotta read the humidity and the temperature 
 
    int result[2], i;
 
@@ -228,7 +228,7 @@ void _WSN_wait_answer(char ASCII,char getmsj)
 	flagWait = 1;
 }
 /**************** ZigBee Configuration: ************************/
-void _WSN_ZigBee_config(void)
+/*void _WSN_ZigBee_config(void)
 { 		
 	
 	_WSN_Write_UART("ATS00=0040\n\r\0");
@@ -245,7 +245,7 @@ void _WSN_ZigBee_config(void)
 /******************* Message Detection: *************************/
 
 /******************* Main Function: *****************************/
-void imprimirestado()
+/*void imprimirestado()
 {
  	if(estado==2)
 	{
@@ -312,7 +312,7 @@ void EnviarDatos(void)
 			 
 			/********* SHT11 Sensor Layer *************************/
 
-			if(q<f)q++;
+/*			if(q<f)q++;
 			else
 			{
 		   	
